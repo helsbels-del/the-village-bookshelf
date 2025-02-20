@@ -20,5 +20,5 @@ from share.views import my_share
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('share', my_share, name='share'),
+    path('share/', my_share, name='share'),
 ]
