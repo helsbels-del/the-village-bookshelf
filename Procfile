@@ -1,1 +1,1 @@
-web: gunicorn thevillagebookshelf.wsgi
+web: gunicorn thevillagebookshelf:app
