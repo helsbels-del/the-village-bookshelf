@@ -1,5 +1,5 @@
 """
-URL configuration for villagebookshelf project.
+URL configuration for thevillagebookhelf project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -20,5 +20,5 @@ from share.views import my_share
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('share/', my_share, name='share'),
+    path('share', my_share, name='share'),
 ]
