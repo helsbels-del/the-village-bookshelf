@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import share
+from .models import Books
 
 # Register your models here.
-admin.site.register(share)
+admin.site.register(Books)
