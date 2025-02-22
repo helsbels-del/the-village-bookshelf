@@ -15,7 +15,7 @@ import os
 import dj_database_url
 from dotenv import load_dotenv
 
-load_dotenv
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure--0dhw@x1n6(n48s*zeqj1o28pad^v8vnhe28oe5bv@00%6+qyt
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1:8000'
+    '127.0.0.1:8000',
     'the-village-bookshelf-96bd2f93fc5e.herokuapp.com',
     'localhost'
 ]
