@@ -6,9 +6,7 @@ from django.contrib.auth.models import User
 class Books(models.Model):
     # Basic details about the book
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=200, unique=True)
     author = models.CharField(max_length=255)
-    genre = models.CharField(max_length=20)
     description = models.TextField(blank=True, null=True)  
 
 # Book condition: you can use a choice field to limit the options
@@ -21,7 +19,7 @@ class Books(models.Model):
     condition = models.CharField(max_length=10, choices=CONDITION_CHOICES, default='USED')
     
     # Book category or genre (optional)
-    category = models.CharField(max_length=100, blank=True, null=True)  # Could be a ForeignKey if you want more structure
+    genre = models.CharField(max_length=100, blank=True, null=True)  # Could be a ForeignKey if you want more structure
     
     # User who owns the book (if you plan to associate users with books)
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
