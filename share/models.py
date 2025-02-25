@@ -19,9 +19,9 @@ class Books(models.Model):
     condition = models.CharField(max_length=10, choices=CONDITION_CHOICES, default='USED')
     
     # Book category or genre (optional)
-    genre = models.CharField(max_length=100, blank=True, null=True)  # Could be a ForeignKey if you want more structure
+    genre = models.CharField(max_length=100, blank=True, null=True)  # Could be a ForeignKey 
     
-    # User who owns the book (if you plan to associate users with books)
+    # User who owns the book 
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     
     # Timestamp fields to track when the book is added or modified
