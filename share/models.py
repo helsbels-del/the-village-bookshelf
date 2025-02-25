@@ -7,9 +7,8 @@ class Books(models.Model):
     # Basic details about the book
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)  
-
-# Book condition: you can use a choice field to limit the options
+    description = models.TextField(blank=True, null=True)
+    # Book condition: you can use a choice field to limit the options
     CONDITION_CHOICES = [
         ('NEW', 'New'),
         ('USED', 'Used'),
@@ -17,18 +16,17 @@ class Books(models.Model):
         ('POOR', 'Poor'),
     ]
     condition = models.CharField(max_length=10, choices=CONDITION_CHOICES, default='USED')
-    
+
     # Book category or genre (optional)
     genre = models.CharField(max_length=100, blank=True, null=True)  # Could be a ForeignKey 
     
-    # User who owns the book 
+    # User who owns the book
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    
+
     # Timestamp fields to track when the book is added or modified
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.title} by {self.author}"
-
     
