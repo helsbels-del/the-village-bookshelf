@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Books(models.Model):
     # Basic details about the book
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=200)
     author = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)  
 
