@@ -15,10 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from share.views import my_share
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('share', my_share, name='share'),
+    path('', include("share.urls"), name="share-urls"),
 ]
