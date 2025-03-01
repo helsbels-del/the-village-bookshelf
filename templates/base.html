@@ -23,7 +23,11 @@
 
     <nav class="navigation">
         <a href="{% url 'home' %}" class="nav-btn"><i class="fa fa-plus"></i> Home</a>
-       
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+        
     </nav>
 
     <main>

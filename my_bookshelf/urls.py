@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from share.views import my_share
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('share', my_share, name='share'),
     path('', include("share.urls"), name="share-urls"),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),  # Built-in auth URLs
+    path('accounts/', include('share.urls')),  # Include signup from `share`
 ]
