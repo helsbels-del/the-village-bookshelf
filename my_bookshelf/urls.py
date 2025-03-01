@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('share', my_share, name='share'),
     path('', include("share.urls"), name="share-urls"),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
