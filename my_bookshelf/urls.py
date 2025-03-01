@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from share.views import my_share
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('share', my_share, name='share'),
-    path('', include("share.urls"), name="share-urls"),
+    path('admin/', admin.site.urls),  # admin page
+    path('share', my_share, name='share'),  # custom share view
+    path('', include("share.urls"), name="share-urls"), # includes share urls.
     path('accounts/', include('django.contrib.auth.urls')),  # Built-in auth URLs
-    path('accounts/', include('share.urls')),  # Include signup from `share`
+    path('accounts/logout-success/', TemplateView.as_view(template_name="registration/logout.html"), name='logout_success'),  # Custom logout success page
 ]
