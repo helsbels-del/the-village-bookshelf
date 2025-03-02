@@ -5,9 +5,7 @@
     {% load static %}  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}The Village Bookshelf{% endblock %}</title>
-
-    
+    <title>{% block title %}The Village Bookshelf{% endblock %}</title>    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -16,10 +14,11 @@
 
     <header>
         <div class="logo">
-            <img src="{% static 'images/open_book.png' %}" alt="Village Scene">
+            <img src="{% static 'images/books-small.png' %}" alt="Village Scene">
+            <h1>The Village Bookshelf</h1>
         </div>
         <nav class="navigation">
-            <a href="{% url 'home' %}" class="nav-btn"><i class="fa fa-plus"></i> Home</a>
+            <a href="{% url 'home' %}" class="nav-btn"> Home</a>
             {% if user.is_authenticated %}
             <span>Welcome, {{ user.username }}!</span>
             <form action="{% url 'logout' %}" method="post" style="display:inline;">
@@ -27,6 +26,7 @@
                 <button type="submit">Logout</button>
             </form>
         {% else %}
+            <span>Welcome, Guest!</span>
             <a href="{% url 'login' %}" class="nav-btn">Login</a>
             <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
         {% endif %}
@@ -39,14 +39,6 @@
         {% block content %}
         {% endblock %}
 
-    <!-- Display user information in the top-right corner -->
-    <div class="user-info">
-        {% if user.is_authenticated %}
-            <span>Welcome, {{ user.username }}!</span>
-        {% else %}
-            <span>Welcome, Guest!</span>
-        {% endif %}
-    </div>
     </main>
 
     <footer>
