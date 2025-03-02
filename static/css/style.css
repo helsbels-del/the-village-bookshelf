@@ -72,14 +72,14 @@ h1 {
 
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(179, 105, 10);
-  color: white;
-  text-align: center;
-}
+    position: relative;
+    width: 100%;
+    background-color: rgb(179, 105, 10);
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Add some padding for spacing */
+  }
+  
 
 
 h2 {
