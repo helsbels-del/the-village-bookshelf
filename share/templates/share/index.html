@@ -4,9 +4,19 @@
 {% block title %}Home | The Village Bookshelf{% endblock %}
 
 {% block content %}
-    <div class="book-image">
+    <section class="hero">
+        <h1>Welcome to The Village Bookshelf</h1>
+        <p>Share, discover, and borrow books from your local community.</p>
+        
+        <!-- Search Form -->
+        <form method="GET" action="{% url 'search_books' %}">
+            <input type="text" name="q" placeholder="Search for books...">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <!-- <div class="book-image">
         <img src="{% static 'images/open_book.png' %}" alt="Open Book">
-    </div>
+    </div> -->
 {% endblock %}
 
 

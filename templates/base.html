@@ -18,19 +18,22 @@
         <div class="logo">
             <img src="{% static 'images/open_book.png' %}" alt="Village Scene">
         </div>
-        <h1>The Village Bookshelf</h1>
+        <nav class="navigation">
+            <a href="{% url 'home' %}" class="nav-btn"><i class="fa fa-plus"></i> Home</a>
+            {% if user.is_authenticated %}
+            <span>Welcome, {{ user.username }}!</span>
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}" class="nav-btn">Login</a>
+            <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
+        {% endif %}
+    </nav>
     </header>
 
-    <nav class="navigation">
-        <a href="{% url 'home' %}" class="nav-btn"><i class="fa fa-plus"></i> Home</a>
-        <a href="{% url 'login' %}" class="nav-btn">Login</a>
-        <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
-        <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Logout</button>
-</form>
-
-    </nav>
+    
 
     <main>
         {% block content %}

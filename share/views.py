@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
+from .models import Books
 
 # Create your views here.
 
@@ -39,3 +40,9 @@ def login_view(request):
             # Handle invalid login
             pass
     return render(request, 'login.html')
+
+
+def search_books(request):
+    query = request.GET.get('q', '')
+    results = Book.objects.filter(title__icontains=query) if query else []
+    return render(request, 'search_results.html', {'results': results, 'query': query})
