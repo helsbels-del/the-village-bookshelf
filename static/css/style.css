@@ -11,14 +11,9 @@ main {
     background-size: cover;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    padding-top: 20px;
-}
-
 header {
-    margin-bottom: 20px;
+    background-color: #4CAF50;
+    padding: 10px;
 }
 
 .logo img {
@@ -65,12 +60,6 @@ h1 {
     color: white;
 }
 
-.book-image img {
-    width: 60%;
-    margin-top: 30px;
-}
-
-
 footer {
     position: relative;
     width: 100%;
@@ -80,25 +69,18 @@ footer {
     padding: 20px 0; /* Add some padding for spacing */
   }
   
-
-
-h2 {
-    color: #333;
-}
-
 form {
-    background: white;
+    
     padding: 20px;
     width: 300px;
     margin: auto;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 .navigation form {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 button {
@@ -144,11 +126,6 @@ body {
     text-align: center;
 }
 
-header {
-    background-color: #4CAF50;
-    padding: 10px;
-}
-
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -192,6 +169,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    width: 80%;
 }
 
 .hero input[type="text"] {
