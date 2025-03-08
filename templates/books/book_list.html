@@ -5,7 +5,7 @@
 
 {% block content %}
     <section class="list">
-        <h2>Welcome to The Village Bookshelf </h2>
+        <h2>Welcome to The Village Bookshelf {{ user.username }}!</h2>
         <p>Browse books available for swapping in your community.</p>
 
         <h2>Available Books</h2>
@@ -20,5 +20,9 @@
                 </li>
             {% endfor %}
             </ul>
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
     </section>
 {% endblock %}

@@ -5,22 +5,25 @@ body {
 }
 
 main {
+    background-color: #4CAF50;
+    padding: 10px;
+}
+
+header {
     background-image: url("/static/images/village-bridge.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-}
-
-header {
-    background-color: #4CAF50;
-    padding: 10px;
+    /* Blend a transparent black overlay with the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.1 - 1) */
+    background-blend-mode: darken; /* Other options: multiply, overlay, etc. */
+    
 }
 
 .logo img {
     width: 60%;
     height: auto;
     padding-top: 20px;
-    opacity: 0.3;
 }
 
 h1 {
