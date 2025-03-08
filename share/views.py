@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from .models import Books
+from .forms import BookForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -46,3 +48,45 @@ def search_books(request):
     query = request.GET.get('q', '')
     results = Books.objects.filter(title__icontains=query) if query else []
     return render(request, 'search_results.html', {'results': results, 'query': query})
+
+
+def book_list(request):
+    books = Book.objects.all()
+    return render(request, "books/book_list.html", {"books": books})
+
+
+@login_required
+def book_create(request):
+    if request.method == "POST":
+        form = BookForm(request.POST)
+        if form.is_valid():
+            book = form.save(commit=False)
+            book.owner = request.user  # Assign the current user as the owner
+            book.save()
+            return redirect("book_list")
+    else:
+        form = BookForm()
+    return render(request, "books/book_form.html", {"form": form})
+
+
+@login_required
+def book_update(request, pk):
+    book = get_object_or_404(Books, pk=pk, owner=request.user)
+    if request.method == "POST":
+        form = BookForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect("book_list")
+    else:
+        form = BookForm(instance=book)
+    return render(request, "books/book_form.html", {"form": form})
+
+
+@login_required
+def book_delete(request, pk):
+    book = get_object_or_404(Books, pk=pk, owner=request.user)
+    if request.method == "POST":
+        book.delete()
+        return redirect("book_list")
+    return render(request, "books/book_confirm_delete.html", {"book": book})
+
