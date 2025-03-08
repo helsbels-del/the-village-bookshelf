@@ -37,7 +37,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')  # Redirect after successful login
+            return redirect('book_list')  # Redirect after successful login
         else:
             # Handle invalid login
             pass
@@ -51,7 +51,7 @@ def search_books(request):
 
 
 def book_list(request):
-    books = Book.objects.all()
+    books = Books.objects.all()
     return render(request, "books/book_list.html", {"books": books})
 
 

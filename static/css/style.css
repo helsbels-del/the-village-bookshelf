@@ -141,7 +141,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-.hero {
+.hero, .list  {
     padding: 30px 1ch;
     background-image: url("{% static 'images/bookshelf-bg.jpg' %}");
     background-size: cover;
@@ -151,7 +151,7 @@ nav ul li a {
     text-align: center;
 }
 
-.hero h1 {
+.hero, .list h1 {
     font-size: 24px; /* Reduce size for mobile */
     font-weight: bold;
     text-shadow: none;
