@@ -26,6 +26,9 @@ class Books(models.Model):
     # User who owns the book
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
+    # Is the book available for swap/share
+    available = models.BooleanField(default=True)
+    
     # Timestamp fields to track when the book is added or modified
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
