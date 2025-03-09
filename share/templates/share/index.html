@@ -4,14 +4,7 @@
 {% block title %}Home | The Village Bookshelf{% endblock %}
 
 {% block content %}
-<div class="logo">
-    <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image1">
-    <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image2">
-    <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image3">
-</div>
-<div>
-    <h1>The Village Bookshelf</h1>
-</div>
+
 <nav class="navigation">    
     {% if user.is_authenticated %}
     <span class="welcome-message">Welcome, {{ user.username }}!</span>

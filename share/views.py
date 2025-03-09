@@ -6,8 +6,13 @@ from django.shortcuts import redirect
 from .models import Books
 from .forms import BookForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.sessions.models import Session
 
 # Create your views here.
+
+
+def clear_all_sessions():
+    Session.objects.all().delete()
 
 
 def my_share(request):
