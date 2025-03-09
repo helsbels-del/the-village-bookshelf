@@ -8,7 +8,10 @@
     <section class="list">
         <h2><i>Hello {{ user.username }}!</i></h2>
         <p>Browse books available for swapping in your community.</p>
-
+        <form method="GET" action="{% url 'search_books' %}">
+            <input type="text" name="q" placeholder="Search for books...">
+            <button type="submit">Search</button>
+        </form>
         <h2>Available Books</h2>
             <ul>
             {% for book in books %}
