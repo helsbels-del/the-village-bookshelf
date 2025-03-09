@@ -46,8 +46,8 @@ def login_view(request):
 
 def search_books(request):
     query = request.GET.get('q', '')
-    results = Books.objects.filter(title__icontains=query) if query else []
-    return render(request, 'search_results.html', {'results': results, 'query': query})
+    books = Books.objects.filter(title__icontains=query) if query else []
+    return render(request, 'books/search_results.html', {'books': books, 'query': query})
 
 
 def book_list(request):
