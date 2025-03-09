@@ -10,7 +10,8 @@
     <span class="welcome-message">Welcome, {{ user.username }}!</span>
     <form action="{% url 'logout' %}" method="post" style="display:inline;">
         {% csrf_token %}
-        <button type="submit">Logout</button>
+        <button type="submit">Logout</button>        
+        <button type="submit"><a href="{% url 'search_books' %}">Return to Search</a></button>
     </form>
 {% else %}
     <span>Welcome, Guest!</span>
