@@ -1,23 +1,30 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="hidden" name="next" value="{% url 'book_list' %}">
-        <button type="submit">Login</button>
-    </form>
-    
-    <a href="{% url 'password_reset' %}">Forgot password?</a>
-    <a href="{% url 'home' %}">Return to Home</a>
-</body>
-</html>
+{% block title %}Book List | The Village Bookshelf{% endblock %}
+
+{% block content %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="next" value="{% url 'book_list' %}">
+            <button type="submit">Login</button>
+        </form>
+        
+        <a href="{% url 'password_reset' %}">Forgot password?</a>
+        <a href="{% url 'home' %}">Return to Home</a>
+    </body>
+    </html>
+
+{% endblock %}
