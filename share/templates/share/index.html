@@ -5,19 +5,23 @@
 
 {% block content %}
 <div class="logo">
-    <img src="{% static 'images/books-small.png' %}" alt="Village Scene">
+    <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image1">
+    <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image2">
+    <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image3">
+</div>
+<div>
     <h1>The Village Bookshelf</h1>
 </div>
-<nav class="navigation">
-    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
+<nav class="navigation">    
     {% if user.is_authenticated %}
-    <span>Welcome, {{ user.username }}!</span>
+    <span class="welcome-message">Welcome, {{ user.username }}!</span>
     <form action="{% url 'logout' %}" method="post" style="display:inline;">
         {% csrf_token %}
         <button type="submit">Logout</button>
     </form>
 {% else %}
     <span>Welcome, Guest!</span>
+    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
     <a href="{% url 'login' %}" class="nav-btn">Login</a>
     <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
 {% endif %}

@@ -60,6 +60,11 @@ h1 {
     color: white;
 }
 
+.welcome-message {
+    text-align: center;
+    padding: 10px;
+}
+
 footer {
     position: relative;
     width: 100%;

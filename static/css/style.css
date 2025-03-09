@@ -17,18 +17,27 @@ header {
     /* Blend a transparent black overlay with the image */
     background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.1 - 1) */
     background-blend-mode: darken; /* Other options: multiply, overlay, etc. */
-    
+    padding: 20px 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .logo img {
-    width: 60%;
-    height: auto;
-    padding-top: 20px;
+        padding-top: 20px;
+        width: 80%;
+        max-width: 250px;
+        height:auto;
+        display: block;
+        margin: 0 auto;
 }
 
 h1 {
-    font-size: 5vw;
-    color: #18ec29;
+    font-size: 8vw;
+    color: #c7f1c9;
     font-style: italic;
     text-decoration-line: overline;
 }
@@ -43,17 +52,28 @@ h1 {
 }
 
 .nav-btn {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: #333;
     background: white;
     border: 2px solid #333;
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 5px;
     border-radius: 50px;
-    font-size: 18px;
-    transition: 0.3s;
+    font-size: 16px;
+    transition: 0.3s; 
+    width: 50%;
+    max-width: 300px;
 }
+
+.nav-btn button {
+    width: 80%; 
+    padding: 12px; 
+    font-size: 16px; 
+  }
 
 .nav-btn i {
     margin-right: 5px;
@@ -64,18 +84,7 @@ h1 {
     color: white;
 }
 
-footer {
-    position: relative;
-    width: 100%;
-    background-color: rgb(179, 105, 10);
-    color: white;
-    text-align: center;
-    padding: 20px 0; /* Add some padding for spacing */
-  }
-  
 form {
-    
-    padding: 20px;
     width: 300px;
     margin: auto;
     border-radius: 5px;
@@ -169,27 +178,67 @@ nav ul li a {
 .hero form {
     margin-top: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    width: 80%;
+    gap: 10px;
+    width: 100%;
 }
 
 .hero input[type="text"] {
-    width: 80%;
+    width: 90%;
     max-width: 300px; /* Prevents from being too wide */
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
 .hero button {
-    padding: 10px 15px;
-    font-size: 14px;
+    width: 90%;
+    max-width: 150px;
+    padding: 12px;
+    font-size: 16px;
     background-color: #ff9800;
     border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
 }
+
+footer {
+    background-color: #5a3e1b;
+    color: #f8f8f8;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+@media screen and (max-width: 425px) {
+    .logo img:nth-child(n+2){
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Stack navigation buttons */
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Center images properly */
+    .logo img {
+        max-width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Make footer text smaller for better spacing */
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
