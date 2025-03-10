@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book List | The Village Bookshelf{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>About The Village Bookshelf</h2>
+    <p>The Village Bookshelf is a platform for sharing books within the local communities.</p>
+    <p>Helping to promote literacy and sustainability by being able to easily swap books with others in the local area.</p>
+    <p>Who wouldn't want to join a local book-sharing community!</p>
+    <p>You may find that book you've always been looking for!</p>
+</div>
+
+<button type="submit" class="nav-btn"><a href="{% url 'home' %}">Return to Home</a></button>
+{% endblock %}

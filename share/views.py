@@ -11,6 +11,11 @@ from django.core.paginator import Paginator
 
 # Create your views here.
 
+
+def about(request):
+    return render(request, 'about.html')
+
+
 def clear_all_sessions():
     Session.objects.all().delete()
 
