@@ -52,7 +52,7 @@ h1 {
 }
 
 .nav-btn {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -67,6 +67,12 @@ h1 {
     transition: 0.3s; 
     width: 50%;
     max-width: 300px;
+}
+
+.button-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-btn button {
@@ -213,6 +219,27 @@ footer {
     font-size: 14px;
   }
 
+.book-list-container {
+    width: 80%;
+    max-width: 600px;
+    height: 100px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #f9f9f9;
+    margin: auto;
+    color: #243820;
+  }
+  
+.book-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+.book-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
 @media screen and (max-width: 425px) {
     .logo img:nth-child(n+2){
         display: none;
