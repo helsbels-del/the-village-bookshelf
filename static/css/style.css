@@ -103,10 +103,14 @@ form {
 }
 
 button {
-    background: #007bff;
-    color: white;
-    padding: 10px 15px;
+    width: 90%;
+    max-width: 150px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #ff9800;
     border: none;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
 }
 
