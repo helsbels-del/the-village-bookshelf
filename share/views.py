@@ -57,7 +57,7 @@ def search_books(request):
 
 def book_list(request):
     books = Books.objects.all()
-    paginator = Paginator(books, 3)  # show 3 books per page
+    paginator = Paginator(books, 1000)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, "books/book_list.html", {"page_obj": page_obj})
