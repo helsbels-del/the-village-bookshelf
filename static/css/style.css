@@ -222,7 +222,7 @@ footer {
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ccc;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
+    background:#c7f1c9;
     margin: auto;
     color: white;
   }
@@ -231,6 +231,10 @@ footer {
     list-style-type: none;
     padding: 0;
   }
+
+.book-link {
+    color: black;
+}
   
 .book-item {
     padding: 10px;
