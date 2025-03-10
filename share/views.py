@@ -26,7 +26,11 @@ def my_share(request):
 
 def home(request):
     """Homepage for the book-sharing app."""
-    return render(request, 'share/index.html')
+    books = Books.objects.all()
+    paginator = Paginator(books, 1000)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'share/index.html', {'page_obj': page_obj})
 
 
 def signup(request):
