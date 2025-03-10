@@ -7,9 +7,9 @@ from .models import Books
 from .forms import BookForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sessions.models import Session
+from django.core.paginator import Paginator
 
 # Create your views here.
-
 
 def clear_all_sessions():
     Session.objects.all().delete()
@@ -57,7 +57,10 @@ def search_books(request):
 
 def book_list(request):
     books = Books.objects.all()
-    return render(request, "books/book_list.html", {"books": books})
+    paginator = Paginator(books, 3)  # show 3 books per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, "books/book_list.html", {"page_obj": page_obj})
 
 
 @login_required

@@ -13,10 +13,12 @@
             <button type="submit">Search</button>
         </form>
         <h2>Available Books</h2>
-            <ul>
-            {% for book in books %}
-                <li>
-                 {{ book.title }} by {{ book.author }}
+        <div class="book-list-container">
+            <ul class="book-list">
+            {% for book in page_obj %}
+                <li class="book-item">
+                 <strong>{{ book.title }}</strong> by {{ book.author }}
+                 <small>{{ book.description }}</small>
                     {% if user.is_authenticated and book.owner == user %}
                         <a href="{% url 'book_update' book.pk %}">Edit</a>
                         <a href="{% url 'book_delete' book.pk %}">Delete</a>
@@ -24,7 +26,9 @@
                 </li>
             {% endfor %}
             </ul>
-            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        </div>
+
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
                 {% csrf_token %}
                 <button type="submit" class="nav-btn">Logout</button>
             </form>
