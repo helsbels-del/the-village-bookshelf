@@ -240,6 +240,19 @@ footer {
     padding: 10px;
     border-bottom: 1px solid #ddd;
   }
+
+  .book-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.book-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 425px) {
     .logo img:nth-child(n+2){
         display: none;

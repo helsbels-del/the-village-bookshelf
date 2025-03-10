@@ -72,6 +72,11 @@ def book_list(request):
     return render(request, "books/book_list.html", {"page_obj": page_obj})
 
 
+def book_detail(request,  pk):
+    book = get_object_or_404(Books, pk=pk)
+    return render(request, "books/book_detail.html", {"book": book})
+
+
 @login_required
 def book_create(request):
     if request.method == "POST":

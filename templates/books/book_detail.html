@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.title }} | The Village Bookshelf{% endblock %}
+
+{% block content %}
+    <section class="book-detail">
+        <h2>{{ book.title }}</h2>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+
+        {% if user.is_authenticated and book.owner == user %}
+            <a href="{% url 'book_update' book.pk %}" class="btn">Edit</a>
+            <a href="{% url 'book_delete' book.pk %}" class="btn">Delete</a>
+        {% endif %}
+
+        <a href="{% url 'book_list' %}" class="btn">Back to Book List</a>
+    </section>
+{% endblock %}
