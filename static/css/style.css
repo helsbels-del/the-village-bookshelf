@@ -216,7 +216,7 @@ footer {
 .book-list-container {
     width: 80%;
     max-width: 600px;
-    height: 150px;
+    height: 100px;
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ccc;
     padding: 10px;
