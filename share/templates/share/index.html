@@ -15,11 +15,29 @@
     </form>
 {% else %}
     <span>Welcome, Guest!</span>
+{% endif %}
+
+<h2>Available Books</h2>
+<div class="book-list-container">
+    <ul class="book-list">
+    {% for book in page_obj %}
+        <li class="book-item">
+            <strong>{{ book.title }}</strong> by {{ book.author }}
+            <small>{{ book.description }}</small>
+            {% if user.is_authenticated and book.owner == user %}
+                <a href="{% url 'book_update' book.pk %}">Edit</a>
+                <a href="{% url 'book_delete' book.pk %}">Delete</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
+</div>
     <a href="{% url 'home' %}" class="nav-btn"> Home</a>
     <a href="{% url 'about' %}" class="nav-btn">About</a>
     <a href="{% url 'login' %}" class="nav-btn">Login</a>
     <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
-{% endif %}
+
 </nav>  
 
     
