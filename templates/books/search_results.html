@@ -10,7 +10,7 @@
     {% if books %}
         <ul>
             {% for book in books %}
-                <li>{{ book.title }} by {{ boo.author }}</li>
+                <li><a href="{% url 'book_detail' book.pk %}"></a>{{ book.title }} by {{ book.author }}</li>
             {% endfor %}
         </ul>
     {% else %}

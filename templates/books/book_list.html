@@ -8,6 +8,10 @@ Village Bookshelf{% endblock %} {% block content %}
     <input type="text" name="q" placeholder="Search for books..." />
     <button type="submit">Search</button>
   </form>
+  <form method="GET" action="{% url 'search_books' %}">
+    <input type="text" name="q" placeholder="Search by title..." value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
   <h2>Available Books</h2>
   <div class="book-list-container">
     <ul class="book-list">
