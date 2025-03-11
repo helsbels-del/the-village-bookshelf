@@ -63,7 +63,7 @@ def search_books(request):
     books = Books.objects.filter(title__icontains=query) if query else Books.objects.all()
     return render(request, 'books/search_results.html', {'books': books, 'query': query})
 
-
+@login_required
 def book_list(request):
     books = Books.objects.all()
     paginator = Paginator(books, 1000)
