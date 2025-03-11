@@ -309,15 +309,14 @@ footer {
 }
   
 
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 767px) {
     .logo img:nth-child(n+2){
         display: none;
     }
 }
 
 @media screen and (min-width: 767px) { 
-    /* Stack navigation buttons */
-     .navigation {
+        .navigation {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -338,10 +337,4 @@ footer {
     }
 }
 
-@media screen and (min-width: 1439px) {
-    .navigation {
-        display: flex;
-        flex-direction: row;
-    }
 
-}
