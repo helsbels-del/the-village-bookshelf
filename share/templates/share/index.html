@@ -14,8 +14,8 @@ Bookshelf{% endblock %} {% block content %}
   <span>Welcome, Guest!</span>
   {% endif %}
   <nav class="navigation">
-    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
     <a href="{% url 'about' %}" class="nav-btn">About</a>
+    <a href="{% url 'home' %}" class="nav-btn"> Home</a>    
     <a href="{% url 'login' %}" class="nav-btn">Login</a>
     <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
   </nav>

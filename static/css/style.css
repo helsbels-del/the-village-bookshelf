@@ -315,14 +315,14 @@ footer {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 767px) { 
     /* Stack navigation buttons */
-    .navigation {
+     .navigation {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         gap: 10px;
-    }
+    }  
 
     /* Center images properly */
     .logo img {
@@ -338,3 +338,10 @@ footer {
     }
 }
 
+@media screen and (min-width: 1439px) {
+    .navigation {
+        display: flex;
+        flex-direction: row;
+    }
+
+}
