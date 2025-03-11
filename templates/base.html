@@ -22,7 +22,8 @@
             <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image3"></a>
         </div>
         <div>
-            <h1>The Village Bookshelf</h1>
+            <a href="{% url 'home' %}" style="text-decoration: none;">
+            <h1>The Village Bookshelf</h1></a>
         </div>
         {% block content %}
         {% endblock %}       
