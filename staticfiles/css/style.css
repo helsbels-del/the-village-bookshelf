@@ -45,7 +45,7 @@ h1 {
 .navigation {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center; /* Centers items */
     gap: 10px; /* Adds spacing between items */
     text-align: center;
