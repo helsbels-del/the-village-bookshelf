@@ -8,11 +8,13 @@ from .forms import BookForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sessions.models import Session
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 # Create your views here.
 
 @login_required
 def request_swap(request, pk):
+    print("Request swap view triggered")  # Debugging line
     book = get_object_or_404(Books, pk=pk)
 
     if request.user == book.owner:
