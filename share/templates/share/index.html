@@ -22,7 +22,6 @@ Bookshelf{% endblock %} {% block content %}
           <a href="{% url 'book_detail' book.pk %}" class="book-link">
             <strong>{{ book.title }}</strong> by {{ book.author }}
           </a>
-          <small>{{ book.description }}</small>
         </li>
         {% endfor %}
       </ul>
