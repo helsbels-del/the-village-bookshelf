@@ -126,6 +126,9 @@ LOGIN_REDIRECT_URL = 'book_list'  # Redirects to book list page after login
 LOGOUT_REDIRECT_URL = "/accounts/logout-success/"
 LOGIN_URL = "login"  # only logged in users can access views wrapped with @login_required
 
+SESSION_COOKIE_AGE = 0
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
