@@ -35,4 +35,13 @@ class Books(models.Model):
 
     def __str__(self):
         return f"{self.title} by {self.author}"
+
+
+class SwapRequest(models.Model):
+    requester = models.ForeignKey(User, on_delete=models.CASCADE, related_name="requests_made")
+    book = models.ForeignKey(Books, on_delete=models.CASCADE, related_name="swap_requests")
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def _str_(self):
+        return f"{self.requester} requested {self.title}"
     

@@ -3,13 +3,32 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
-from .models import Books
+from .models import Books, SwapRequest
 from .forms import BookForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sessions.models import Session
 from django.core.paginator import Paginator
 
 # Create your views here.
+
+@login_required
+def request_swap(request, pk):
+    book = get_object_or_404(Books, pk=pk)
+
+    if request.user == book.owner:
+        messages.error(request, "This is your own book.")
+        return redirect('book_detail', pk=pk)
+    
+    existing_request = SwapRequest.objects.filter(requester=request.user, book=book).exists()
+    if existing_request:
+        messages.warning(request, "You have already requested this book.")
+        return redirect('book_detail', pk=pk)
+    
+    swap_request = SwapRequest.objects.create(requester=request.user, book=book)
+    swap_request.save()
+
+    messages.success(request, "Your swap request has been sent!")
+    return redirect('book_detail', pk=pk)
 
 
 def about(request):
