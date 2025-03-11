@@ -224,16 +224,36 @@ footer {
     min-height: 100px;
     max-height: 200px;
     overflow-y: auto; /* Enable vertical scrolling */
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     padding: 10px;
-    background:#c7f1c9;
-    margin: auto;
-    color: white;
+    background:#f9f9f9;
+    margin: 20px auto;
+    color: #333;
   }
-  
+/* Customise scrollbar */
+
+.book-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.book-list-container::-webkit-scrollbar-thumb {
+    background: #ff9800;
+    border-radius: 10px;
+}
+
+.book-list-container::-webkit-scrollbar-thumb:hover {
+    background: #ff5722;
+}
+
+.book-list-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
 .book-list {
     list-style-type: none;
     padding: 0;
+    margin: 0;
   }
 
 .book-link {
@@ -242,8 +262,50 @@ footer {
   
 .book-item {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
+    border-bottom: 1px solid #ddd
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+/* Hover Effect for Book Items */
+.book-item:hover {
+    background-color: #fafafa;
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Book Title Styling */
+.book-item strong {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Author Name */
+.book-item small {
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Edit/Delete Links */
+.book-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.book-item a:hover {
+    color: #ff9800;
+}
+
+/* Additional Styling for the Scroll Window */
+.book-item:last-child {
+    margin-bottom: 0;
+}
+  
 
 @media screen and (max-width: 425px) {
     .logo img:nth-child(n+2){
