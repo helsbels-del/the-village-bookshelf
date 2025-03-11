@@ -13,12 +13,12 @@ Village Bookshelf{% endblock %} {% block content %}
   <div class="book-list-container">
     <ul class="book-list">
         {% for book in page_obj %}
-            <li class="book-item">        
-                <strong>{{ book.title }}</strong> by {{ book.author }}
-                <small>{{ book.description }}</small>
-                
-            </li>    
-        
+        <li class="book-item">
+          <a href="{% url 'book_detail' book.pk %}" class="book-link">
+            <strong>{{ book.title }}</strong> by {{ book.author }}
+          </a>
+          <small>{{ book.description }}</small>
+        </li>
         {% if user.is_authenticated and book.owner == user %}
         <a href="{% url 'book_update' book.pk %}">Edit</a>
         <a href="{% url 'book_delete' book.pk %}">Delete</a>
