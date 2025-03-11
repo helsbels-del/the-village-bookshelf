@@ -47,7 +47,7 @@ h1 {
 .navigation {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center; /* Centers items */
     gap: 10px; /* Adds spacing between items */
     text-align: center;
@@ -309,16 +309,16 @@ footer {
 }
   
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 375px) {
     .logo img:nth-child(n+2){
         display: none;
     }
 }
 
-@media screen and (min-width: 767px) { 
+@media screen and (max-width: 767px) { 
         .navigation {
         display: flex;
-        flex-direction: row;
+        flex-direction:  column;
         align-items: center;
         gap: 10px;
     }  
