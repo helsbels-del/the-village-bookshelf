@@ -20,13 +20,10 @@
             {{ form.as_p }}
             <input type="hidden" name="next" value="{% url 'book_list' %}">
             <button type="submit" class="nav-btn">Login</button>
-        </form>
-        <button type="submit" class="nav-btn">
-        <a href="{% url 'password_reset' %}">Forgot password?</a>
-        </button>
-        <button type="submit" class="nav-btn">
+        </form>       
+        <a href="{% url 'password_reset' %}">Forgot password?</a>          
         <a href="{% url 'home' %}">Return to Home</a>
-        </button>
+        
     </body>
     </html>
 
