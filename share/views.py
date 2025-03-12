@@ -46,16 +46,17 @@ def signup(request):
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
             login(request, user)
-            return redirect('book_list')  # Redirect after successful login
-        else:
-            # Handle invalid login
-            pass
-    return render(request, 'login.html')
+            # Handle the redirect after login using the 'next' parameter
+            next_url = request.GET.get('next', '/book_list/')  # Default to '/book_list/'
+            return redirect(next_url)
+    else:
+        form = AuthenticationForm()
+    
+    return render(request, 'login.html', {'form': form})
 
 
 def search_books(request):
@@ -63,7 +64,7 @@ def search_books(request):
     books = Books.objects.filter(title__icontains=query) if query else Books.objects.all()
     return render(request, 'books/search_results.html', {'books': books, 'query': query})
 
-@login_required
+
 def book_list(request):
     books = Books.objects.all()
     paginator = Paginator(books, 1000)

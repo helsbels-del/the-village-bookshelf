@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),  # Homepage for "share" app
-    path('books/', views.book_list, name="book_list"),  # Logged in page now shows books
+    path('book_list/', views.book_list, name="book_list"),  # Logged in page now shows books
     path('signup/', views.signup, name='signup'),  # Signup page
     path('login/', views.login_view, name='login'),  # Custom login page
     path('logout/', LogoutView.as_view(), name='logout'),  # Built-in logout view   
@@ -14,6 +14,6 @@ urlpatterns = [
     path('book/<int:pk>/edit/', views.book_update, name="book_update"),
     path('book/<int:pk>/delete/', views.book_delete, name="book_delete"),
     path('about/', views.about, name='about'),
-    path('book/<int:pk>/', views.book_detail, name=('book_detail')),
+    path('book/<int:pk>/', views.book_detail, name='book_detail'),
     path('book/<int:pk>/request_swap/', views.request_swap, name='request_swap'),
     ]

@@ -3,8 +3,9 @@ Village Bookshelf{% endblock %} {% block content %}
 
 <h2>Login</h2>
 <form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="hidden" name="next" value="{{ request.GET.next}}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="hidden" name="next" value="{{ request.GET.next|default:'/book_list/' }}">
   <button type="submit" class="nav-btn">Login</button>
 </form>
 <a href="{% url 'password_reset' %}">Forgot password?</a>
