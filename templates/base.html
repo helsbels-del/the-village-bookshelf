@@ -22,13 +22,14 @@
             <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image3"></a>
         </div>
         <div>
-            <a href="{% url 'home' %}" style="text-decoration: none;">
+            <a href="{% url 'home' %}" style="text-decoration: none;"></a>
             <h1>The Village Bookshelf</h1></a>
         </div>
         {% block content %}
         {% endblock %}       
     </header> 
     <main>
+        {% block hero %}
         <section class="hero">
             <h2>Welcome to The Village Bookshelf</h2>
             <p>Share, discover, and borrow books from your local community.</p>
@@ -39,7 +40,7 @@
                 <button type="submit">Search</button>
             </form>
         </section>
-        
+        {% endblock %}
     </main>
 
     <footer>

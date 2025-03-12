@@ -122,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'book_list'  # Redirects to book list page after login
+LOGIN_REDIRECT_URL = '/book_list/'  # Redirects to book list page after login
 LOGOUT_REDIRECT_URL = "/accounts/logout-success/"
 LOGIN_URL = "login"  # only logged in users can access views wrapped with @login_required
 
