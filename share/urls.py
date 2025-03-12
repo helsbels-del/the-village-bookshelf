@@ -1,10 +1,6 @@
 from django.urls import path
-from . import views  # Import views from the current app
-from .views import signup
 from django.contrib.auth.views import LogoutView
-from .views import search_books
-from .views import about
-from .views import book_detail, request_swap
+from . import views
 
 
 urlpatterns = [
@@ -19,6 +15,5 @@ urlpatterns = [
     path('book/<int:pk>/delete/', views.book_delete, name="book_delete"),
     path('about/', views.about, name='about'),
     path('book/<int:pk>/', views.book_detail, name=('book_detail')),
-    path('book/<int:pk>/', book_detail, name='book_detail'),
-    path('book/<int:pk>/request_swap/', request_swap, name='request_swap'),
+    path('book/<int:pk>/request_swap/', views.request_swap, name='request_swap'),
     ]
