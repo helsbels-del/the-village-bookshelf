@@ -128,6 +128,7 @@ LOGIN_URL = "login"  # only logged in users can access views wrapped with @login
 
 SESSION_COOKIE_AGE = 0
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
