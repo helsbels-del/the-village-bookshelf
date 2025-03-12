@@ -13,13 +13,13 @@ Bookshelf{% endblock %} {% block content %}
   {% else %}
   <span>Welcome, Guest!</span>  
   <nav class="navigation">
-    <a href="{% url 'about' %}" class="nav-btn">About</a>
-    <a href="{% url 'home' %}" class="nav-btn"> Home</a>    
+    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
+    <a href="{% url 'about' %}" class="nav-btn">About</a>        
     <a href="{% url 'login' %}" class="nav-btn">Login</a>
     <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
   </nav>
   {% endif %}
-  
+
     <h2>Available Books</h2>
     <div class="book-list-container">
       <ul class="book-list">
