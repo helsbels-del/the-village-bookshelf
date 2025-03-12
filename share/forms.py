@@ -10,7 +10,7 @@ class BookForm(forms.ModelForm):
         fields = ["title", "author", "description", "available"]
 
 
-class UserForm(UserCreationForm):
+class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)  # Add email field
 
     class Meta:
