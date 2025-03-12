@@ -163,7 +163,6 @@ nav ul li a {
 
 .hero, .list  {
     padding: 30px 1ch;
-    background-image: url("{% static 'images/bookshelf-bg.jpg' %}");
     background-size: cover;
     background-position: center;
     color: white;
