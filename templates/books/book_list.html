@@ -8,11 +8,13 @@
 <section class="list">
   <h2><i>Hello {{ user.username }}!</i></h2>
   <p>Browse books available for swapping in your community.</p>
+  <!-- Search form -->
   <form method="GET" action="{% url 'search_books' %}">
     <input type="text" name="q" placeholder="Search for books..." />
     <br>
     <button type="submit">Search</button>
   </form>
+
    <h2>Available Books</h2>
   <div class="book-list-container">
     <ul class="book-list">
@@ -21,31 +23,31 @@
           <a href="{% url 'book_detail' book.pk %}" class="book-link">
             <strong>{{ book.title }}</strong> by {{ book.author }}
           </a>
-        </li>
+
         {% if user.is_authenticated and book.owner == user %}
-        <a href="{% url 'book_update' book.pk %}">Edit</a>
+        <a href="{% url 'book_update' book.pk %}">Edit</a> |
         <a href="{% url 'book_delete' book.pk %}">Delete</a>
         {% endif %}
       </li>
       {% endfor %}
     </ul>
   </div>
+
+  <!-- Add Book -->
   <div>
     <h3>Would you like to add another book?</h3>
     <div class="button-container">
-      <form
-        action="{% url 'book_create' %}"
-        method="post"
-        style="display: inline"
-      >
+      <form action="{% url 'book_create' %}" method="post" style="display: inline">
         {% csrf_token %}
         <button type="submit" class="nav-btn">Add Book</button>
       </form>
     </div>
+
     <form action="{% url 'logout' %}" method="post" style="display: inline">
       {% csrf_token %}
       <button type="submit" class="nav-btn">Logout</button>
     </form>
   </div>
 </section>
+
 {% endblock %}
