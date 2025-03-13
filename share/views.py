@@ -36,7 +36,7 @@ def signup(request):
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             login(request, user)  # Log in the user automatically
             return redirect("book_list")  # Redirect to book list
     else:
