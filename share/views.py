@@ -8,6 +8,8 @@ from django.contrib.sessions.models import Session
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.mail import send_mail
+
 # Create your views here.
 
 
@@ -116,8 +118,17 @@ def book_delete(request, pk):
 
 @login_required
 def request_swap(request, pk):
-    print("Request swap view triggered")  # Debugging line
     book = get_object_or_404(Books, pk=pk)
+    book_owner_email = book.owner.email
+
+    if book_owner_email:
+        send_mail(
+            subject="Book Swap Rquest",
+            message=f"Hello {book.owner.username}, \n\n{request.user.usename} has requested to swap your book '{book.title}'. Please make contact to arragne the swap.",
+            from_email="your-email@gmail.com",
+            recipient_list=[book_owner_email],
+            fail_silently=False,
+        )
 
     if request.user == book.owner:
         messages.error(request, "This is your own book.")
