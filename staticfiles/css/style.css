@@ -125,16 +125,16 @@ button {
     cursor: pointer;
 }
 
-.navigation button {
+/* .navigation button {
     background-color: #ff9800; /* Adjusted to match search button */
-    color: white;
+    /*color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease;
-}
+} */
 
 button:hover {
     background: #0056b3;
