@@ -230,10 +230,9 @@ footer {
   }
 
 .book-list-container {
-    width: 80%;
-    max-width: 600px;
-    min-height: 100px;
-    max-height: 200px;
+    width: 60%;
+    max-width: 300px;
+    max-height: 50px;
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ddd;
     padding: 10px;
