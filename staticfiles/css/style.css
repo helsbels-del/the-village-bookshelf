@@ -38,12 +38,13 @@ main {
 }
 
 h1 {
-    font-size: 8vw;
-    color: #c7f1c9;
+    font-size: 6vw;
+    color: #1d361e;
     font-style: italic;
     text-decoration-line: overline;
+    font-weight: bolder;
 }
-
+ 
 .navigation {
     margin-top: 20px;
     display: flex;
@@ -168,6 +169,7 @@ nav ul li a {
     color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     text-align: center;
+    text-size-adjust: auto;
 }
 
 .hero, .list h1 {
