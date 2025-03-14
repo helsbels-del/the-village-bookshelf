@@ -3,13 +3,14 @@ Bookshelf{% endblock %} {% block content %}
 <section class="list">
   {% if user.is_authenticated %}
   <span class="welcome-message">Welcome, {{ user.username }}!</span>
+  <nav class="navigation">
   <form action="{% url 'logout' %}" method="post" style="display: inline">
     {% csrf_token %}
-    <button type="submit">Logout</button>
-    <button type="submit">
-      <a href="{% url 'book_list' %}">Return to Search</a>
-    </button>
+    <button type="submit" class="nav-btn">Logout</button>
   </form>
+    <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>  
+  
+  </nav>
   {% else %}
   <span class="welcome-message">Welcome, Guest!</span>  
   <nav class="navigation">
