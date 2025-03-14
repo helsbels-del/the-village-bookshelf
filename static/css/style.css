@@ -325,7 +325,7 @@ footer {
 
     .logo image{
         max-height: 100px;
-        gap: 0;
+        gap: 0px;
     }
 }
 
