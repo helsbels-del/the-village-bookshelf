@@ -12,7 +12,7 @@
     <p>You may find that book you've always been looking for!</p>
 </div>
 <nav class="navigation">
-    <a href="{% url 'home' %}" class="nav-btn"> Return Home</a>
+    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
     {% if user.is_authenticated %}<a href="{% url 'book_list' %}" class="nav-btn"> Return to Book List</a>{% else %}
     <a href="{% url 'login' %}" class="nav-btn">Login</a>
     <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>{% endif %} 
