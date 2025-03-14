@@ -5,20 +5,22 @@ body {
 }
 
 header {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;    
     padding: 10px;
-}   
+}
 
 main {
-    background-image: url("/static/images/village-bridge.jpg");
+    background-image: url("/static/images/village-bridge.jpg");    
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     /* Blend a transparent black overlay with the image */
     background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.1 - 1) */
     background-blend-mode: darken; /* Other options: multiply, overlay, etc. */
-    padding: 20px 10px;    
+    padding: 20px 10px;
 }
+
+
 
 .logo {
     display: flex;
@@ -44,6 +46,7 @@ h1 {
 
 .navigation {
     margin-top: 20px;
+    display: flex;
     flex-direction: row;
     align-items: center; /* Centers items */
     gap: 10px; /* Adds spacing between items */
@@ -160,7 +163,6 @@ nav ul li a {
 
 .hero, .list  {
     padding: 30px 1ch;
-    background-image: url("{% static 'images/bookshelf-bg.jpg' %}");
     background-size: cover;
     background-position: center;
     color: white;
@@ -312,14 +314,13 @@ footer {
     }
 }
 
-@media screen and (max-width: 767px) {
-    /* Stack navigation buttons */
-    .navigation {
+@media screen and (max-width: 767px) { 
+        .navigation {
         display: flex;
-        flex-direction: column;
+        flex-direction:  column;
         align-items: center;
         gap: 10px;
-    }
+    }  
 
     /* Center images properly */
     .logo img {
@@ -334,4 +335,5 @@ footer {
         padding: 10px;
     }
 }
+
 
