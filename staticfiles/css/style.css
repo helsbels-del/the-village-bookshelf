@@ -46,8 +46,8 @@ h1 {
 }
 
 .welcome-message {
-    font-size: 5vw;
-    color: rgb(103, 8, 167);
+    font-size: 4vw;
+    color: #ffd700;
 
 }
  
@@ -217,14 +217,6 @@ nav ul li a {
     border-radius: 5px;
     color: white;
     cursor: pointer;
-}
-
-.results {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
 }
 
 footer {
