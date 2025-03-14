@@ -323,7 +323,7 @@ footer {
         display: none !important;
     }
 
-    .logo {
+    .logo image{
         max-height: 100px;
     }
 }
