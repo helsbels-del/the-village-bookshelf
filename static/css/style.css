@@ -43,7 +43,7 @@ h1 {
     font-style: italic;
     text-decoration-line: overline;
 }
-
+ 
 .navigation {
     margin-top: 20px;
     display: flex;
@@ -168,6 +168,7 @@ nav ul li a {
     color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     text-align: center;
+    text-size-adjust: auto;
 }
 
 .hero, .list h1 {
