@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Book List | The Village Bookshelf{% endblock %}
+{% block title %}Book Form | The Village Bookshelf{% endblock %}
 
 {% block content %}
 
@@ -10,8 +10,9 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button type="submit" class="nav-btn">Save</button>
 </form>
-<a href="{% url 'book_list' %}">Cancel</a>
+<br>
+<a href="{% url 'book_list' %}" class="nav-btn">Cancel</a>
 
 {% endblock %}
