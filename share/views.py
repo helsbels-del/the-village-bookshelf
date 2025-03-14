@@ -119,28 +119,32 @@ def book_delete(request, pk):
 @login_required
 def request_swap(request, pk):
     book = get_object_or_404(Books, pk=pk)
-    book_owner_email = book.owner.email
-
-    if book_owner_email:
-        send_mail(
-            subject="Book Swap Rquest",
-            message=f"Hello {book.owner.username}, \n\n{request.user.usename} has requested to swap your book '{book.title}'. Please make contact to arragne the swap.",
-            from_email="your-email@gmail.com",
-            recipient_list=[book_owner_email],
-            fail_silently=False,
-        )
-
+    #  does book belong to user
     if request.user == book.owner:
         messages.error(request, "This is your own book.")
         return redirect('book_detail', pk=pk)
-    
+    #  has a swap already  been requested.
     existing_request = SwapRequest.objects.filter(requester=request.user, book=book).exists()
     if existing_request:
         messages.warning(request, "You have already requested this book.")
         return redirect('book_detail', pk=pk)
-    
+
+    # make a swap request
     swap_request = SwapRequest.objects.create(requester=request.user, book=book)
     swap_request.save()
 
+    #  send email to book owner
+    if book.owner and hasattr(book.owner, "email") and book.owner.email:
+        send_mail(
+            subject="Book Swap Request",
+            message=(f"Hello {book.owner.username}, \n\n"
+                f"{request.user.username} has requested to swap your book '{book.title}'. Please make contact to arrange the swap."),
+            from_email="noreply@villagebookshelf.com",
+            recipient_list=[book.owner.email], 
+            fail_silently=False,
+        )
+    else:
+        messages.error(request, "This book has no registered owner email.")
+    
     messages.success(request, "Your swap request has been sent!")
     return redirect('book_detail', pk=pk)
