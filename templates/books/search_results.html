@@ -4,9 +4,10 @@ Village Bookshelf{% endblock %} {% block content %}
 <h2>Search Results for "{{ query }}"</h2>
 
 {% if books %}
+<nav class="navigation">
 <ul>
   {% for book in books %}
-  <li>
+  <li class="results">
     <a href="{% url 'book_detail' book.pk %}"
       >{{ book.title }} by {{ book.author }}</a
     >
@@ -17,8 +18,8 @@ Village Bookshelf{% endblock %} {% block content %}
 <p>No books found.</p>
 {% endif %}
 
-<a href="{% url 'home' %}">Return to Home</a>
+<a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
 
-<a href="{% url 'search_books' %}">Return to Search</a>
-
+<a href="{% url 'search_books' %}" class="nav-btn">Return to Search</a>
+</nav>
 {% endblock %}

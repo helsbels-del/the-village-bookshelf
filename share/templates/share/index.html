@@ -11,7 +11,7 @@ Bookshelf{% endblock %} {% block content %}
     </button>
   </form>
   {% else %}
-  <span>Welcome, Guest!</span>  
+  <span class="welcome-message">Welcome, Guest!</span>  
   <nav class="navigation">
     <a href="{% url 'home' %}" class="nav-btn"> Home</a>
     <a href="{% url 'about' %}" class="nav-btn">About</a>        

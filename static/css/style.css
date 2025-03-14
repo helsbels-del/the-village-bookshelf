@@ -44,6 +44,11 @@ h1 {
     text-decoration-line: overline;
     font-weight: bolder;
 }
+
+.welcome-message {
+    font-size: 4vw;
+
+}
  
 .navigation {
     margin-top: 20px;
