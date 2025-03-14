@@ -8,7 +8,8 @@ Bookshelf{% endblock %} {% block content %}
     {% csrf_token %}
     <button type="submit" class="nav-btn">Logout</button>
   </form>
-    <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>  
+    <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a> 
+    <a href="{% url 'about' %}" class="nav-btn">About</a>   
   
   </nav>
   {% else %}
