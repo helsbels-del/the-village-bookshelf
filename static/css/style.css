@@ -340,6 +340,54 @@ button, .btn {
     text-decoration: underline;
 }
 
+/* About page styling */
+
+.about-text {
+    text-align: justify; /* Makes text evenly spread */
+    line-height: 1.5; /* Adds breathing space between lines */
+    padding: 10px 15px; /* Ensures text isn’t cramped on the sides */
+    font-size: 16px; /* Increases readability */
+}
+
+.about-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.about-text p {
+    margin-bottom: 12px;
+}
+
+.about-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between buttons */
+    align-items: center; /* Centers buttons */
+}
+
+.about-buttons button {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-buttons button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 600px) {
     .signup-container {

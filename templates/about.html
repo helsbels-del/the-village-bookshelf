@@ -11,9 +11,10 @@
     <p>Who wouldn't want to join a local book-sharing community!</p>
     <p>You may find that book you've always been looking for!</p>
 </div>
-<div>
-  <h3>How it works</h3>
-  If it is your first visit to the site, you can search for books via the search engine or scroll through the available books in the scroll bar window on the home page.
+
+<div class="about-gp">
+  <h3 class="about-title">How it works</h3>
+  <p class="about-text">If it is your first visit to the site, you can search for books via the search engine or scroll through the available books in the scroll bar window on the home page.
   If you see a book that you like and want to requst a swap, you need to be logged in for this.
 
   Create an account by clicking on the signup link which is found on the home screen, the about screen and the login screen.
@@ -27,8 +28,9 @@
 
   Once the book owner has accepted the request, the book owner and the book requester can communicate via the messaging system to arrange a meet-up or collection method.
 
-  There is then an option to leave reviews and your experience as well as the book itself.
+  There is then an option to leave reviews and your experience as well as the book itself.</p>
 </div>
+
 <nav class="navigation">
     <a href="{% url 'home' %}" class="nav-btn"> Home</a>
     {% if user.is_authenticated %}<a href="{% url 'book_list' %}" class="nav-btn"> Return to Book List</a>{% else %}
