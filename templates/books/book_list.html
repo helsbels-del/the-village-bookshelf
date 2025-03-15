@@ -6,7 +6,9 @@
 {% block content %}
 
 <section class="list">
-  <h2 class="welcome-message"><i>Hello {% if user.is_authenticated %} {{ user.username }} {% else %}Guest{% endif %}!</i></h2>
+  <h2 class="welcome-message"><i>Hello {% if user.is_authenticated %} {{ user.username }}
+    <p>You can now request to swap books that are available in the list below or please use the search bar below to search for a book or author you have in mind</p>
+     {% else %}Guest{% endif %}!</i></h2>
   <p>Browse books available for swapping in your community.</p>
   <!-- Search form -->
   <form method="GET" action="{% url 'search_books' %}">
