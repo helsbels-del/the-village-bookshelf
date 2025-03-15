@@ -36,7 +36,9 @@
   <!-- Add Book -->
   <div>
     <h3>Would you like to add another book?</h3>
+   
     <nav class="navigation">
+      
       <form action="{% url 'book_create' %}" method="post">
         {% csrf_token %}
         <button type="submit" class="nav-btn">Add Book</button>
@@ -46,8 +48,8 @@
         {% csrf_token %}
         <button type="submit" class="nav-btn">Logout</button>
       </form>
-
       <a href="{% url 'about' %}" class="nav-btn">About</a>
+      
 </nav>
 
 </section>
