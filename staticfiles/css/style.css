@@ -406,6 +406,27 @@ button, .btn {
     }
 }
 
+/* Style password reset pages */
+
+.password-reset{
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #c7f1c9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.password-reset h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.password-reset .nav-btn:hover {
+    background-color: #0056b3;
+}
+
+
 footer {
     background-color: #5a3e1b;
     color: #f8f8f8;
