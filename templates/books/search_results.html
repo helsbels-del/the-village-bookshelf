@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block title %}Book List | The
 Village Bookshelf{% endblock %} {% block content %}
 
-<h2>Search Results for "{{ query }}"</h2>
+<h2 class="about-title">Search Results for "{{ query }}"</h2>
 
 {% if books %}
-<nav class="navigation">
-<ul>
+
+<ul class="search-list">
   {% for book in books %}
-  <li class="results">
+  <li class="results about-text" >
     <a href="{% url 'book_detail' book.pk %}"
       >{{ book.title }} by {{ book.author }}</a
     >
@@ -15,9 +15,9 @@ Village Bookshelf{% endblock %} {% block content %}
   {% endfor %}
 </ul>
 {% else %}
-<p>No books found.</p>
+<p>No books found "{{ query }}". Try a different search.</p>
 {% endif %}
-
+<nav class="navigation"></nav>
 <a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
 
 <a href="{% url 'search_books' %}" class="nav-btn">Return to Search</a>
