@@ -239,6 +239,14 @@ h2 {
     margin-bottom: 15px;
 }
 
+.form-book textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;  /* Keeps it from shrinking */
+    box-sizing: border-box;  /* Includes padding & borders in width */
+    resize: vertical; /* Allows user to resize only up/down */
+}
+
 button, .btn {
     display: inline-block;
     padding: 10px 15px;
@@ -269,7 +277,7 @@ button, .btn {
     max-width: 90%;
     width: 400px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 10px;
     background-color: rgb(186, 240, 161);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
