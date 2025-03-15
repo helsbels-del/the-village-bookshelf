@@ -53,13 +53,14 @@ h1 {
 }
  
 .navigation {
-    margin-top: 20px;
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
     align-items: center; /* Centers items */
     gap: 10px; /* Adds spacing between items */
     text-align: center;
     justify-content: center;
+    
 }
 
 .nav-btn {
