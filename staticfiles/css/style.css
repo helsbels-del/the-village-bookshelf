@@ -223,7 +223,7 @@ nav ul li a {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
-    background: white;
+    background: rgb(186, 240, 161);
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
