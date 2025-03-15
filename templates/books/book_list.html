@@ -32,11 +32,10 @@
       {% endfor %}
     </ul>
   </div>
-
+  <h3 class="about-title">Would you like to add another book?</h3>    
   <!-- Add Book Navigation secion-->
   <nav class="navigation">
-    <h3 class="question">Would you like to add another book?</h3>    
-      
+          
       <form action="{% url 'book_create' %}" method="post">
         {% csrf_token %}
         <button type="submit" class="nav-btn">Add Book</button>
