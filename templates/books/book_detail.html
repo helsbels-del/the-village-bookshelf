@@ -19,6 +19,7 @@ The Village Bookshelf{% endblock %} {% block content %}
     <p>This is your book.</p>
     <a href="{% url 'book_update' book.pk %}" class="nav-btn">Edit</a>
     <a href="{% url 'book_delete' book.pk %}" class="nav-btn">Delete</a>
+    <a href="{% url 'book_list' %}" class="nav-btn">Back to Book List</a>
     {% endif %} {% else %}
     <!-- If the user is not authenticated -->
     <a href="{% url 'login' %}" class="nav-btn">Login to request a swap.</a>
