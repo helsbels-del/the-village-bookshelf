@@ -551,15 +551,19 @@ footer {
         margin: 0 auto;
     }
 
-    ul.search-list {
-        margin-left: 50px;
-    }
-
     /* Make footer text smaller for better spacing */
     footer {
         font-size: 12px;
         padding: 10px;
     }
+}
+
+@media screen and (min-width: 768px) {
+    ul.search-list{
+        margin-left: 100px;
+    }
+
+
 }
 
 
