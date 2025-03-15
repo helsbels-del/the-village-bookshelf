@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block content %}
-
+<div class="signup">
 <h2>Sign Up</h2>
-<form method="post">
+<form method="post" class="signup-form">
     {% csrf_token %}
+    <div class="signup-form-gp">
     {{ form.as_p }}
+    </div>
     <input type="hidden" name="next" value="{{ request.GET.next|default:'/book_list/' }}">
-    <button type="submit" class="nav-btn">Sign Up</button>
+    <button type="submit" class="btn">Sign Up</button>
+</div>
 </form>
 <nav class="navigation">
-    <a href="{% url 'login' %}" class="nav-btn">Already have an account? Login</a>   
-    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
-    <a href="{% url 'about' %}" class="nav-btn">About</a>
+    <a href="{% url 'login' %}" class="btn-link">Already have an account? Login</a>   
+    <a href="{% url 'home' %}" class="btn-link"> Home</a>
+    <a href="{% url 'about' %}" class="btn-link">About</a>
 </nav>
 
 
