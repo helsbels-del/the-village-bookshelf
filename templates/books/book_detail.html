@@ -8,12 +8,12 @@ The Village Bookshelf{% endblock %} {% block content %}
 
   <nav class="navigation">
     {% if user.is_authenticated and user != book.owner %}
-
     <form method="POST" action="{% url 'request_swap' book.pk %}">
       {% csrf_token %}
       <button type="submit" class="nav-btn">Request Swap</button>
     </form>
     {% else %}
+    {% if user.is_authenticated and user == book.owner %}
     <p>This is your book.</p>
     <a href="{% url 'book_update' book.pk %}" class="nav-btn">Edit</a>
     <a href="{% url 'book_delete' book.pk %}" class="nav-btn">Delete</a>
