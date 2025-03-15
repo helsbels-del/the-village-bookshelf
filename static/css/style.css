@@ -428,7 +428,7 @@ button, .btn {
 
 ul.search-list {
     display: flex;
-    text-align: center;
+    justify-content: space-between;
 }
 
 
