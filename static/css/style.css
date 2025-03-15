@@ -426,12 +426,6 @@ button, .btn {
     background-color: #0056b3;
 }
 
-ul.search-list {
-    display: flex;
-    justify-content: space-between;
-}
-
-
 footer {
     background-color: #5a3e1b;
     color: #f8f8f8;
@@ -555,6 +549,10 @@ footer {
         max-width: 80%;
         display: block;
         margin: 0 auto;
+    }
+
+    ul.search-list {
+        margin-left: 50px;
     }
 
     /* Make footer text smaller for better spacing */
