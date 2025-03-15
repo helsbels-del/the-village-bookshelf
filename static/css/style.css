@@ -426,7 +426,9 @@ button, .btn {
     background-color: #0056b3;
 }
 
-
+.search-list {
+    text-align: center;
+}
 
 
 footer {
