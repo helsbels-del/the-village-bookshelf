@@ -426,7 +426,7 @@ button, .btn {
     background-color: #0056b3;
 }
 
-.search-list {
+ul.search-list {
     display: flex;
     text-align: center;
 }
