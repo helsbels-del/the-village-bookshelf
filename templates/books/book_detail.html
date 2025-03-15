@@ -12,6 +12,7 @@ The Village Bookshelf{% endblock %} {% block content %}
     <form method="POST" action="{% url 'request_swap' book.pk %}">
       {% csrf_token %}
       <button type="submit" class="nav-btn">Request Swap</button>
+      <a href="{% url 'book_list' %}" class="nav-btn">Back to Book List</a>
     </form>
     {% else %}
     <!-- If the user is the owner -->
