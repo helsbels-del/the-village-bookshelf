@@ -427,6 +427,7 @@ button, .btn {
 }
 
 .search-list {
+    display: flex;
     text-align: center;
 }
 
