@@ -33,11 +33,9 @@
     </ul>
   </div>
 
-  <!-- Add Book -->
-  <div>
-    <h3 class="question">Would you like to add another book?</h3>
-   
-    <nav class="navigation">
+  <!-- Add Book Navigation secion-->
+  <nav class="navigation">
+    <h3 class="question">Would you like to add another book?</h3>    
       
       <form action="{% url 'book_create' %}" method="post">
         {% csrf_token %}
@@ -50,7 +48,7 @@
       </form>
       <a href="{% url 'about' %}" class="nav-btn">About</a>
       
-</nav>
+  </nav>
 
 </section>
 
