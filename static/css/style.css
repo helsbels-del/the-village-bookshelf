@@ -221,7 +221,8 @@ nav ul li a {
 
 /* Style for book form */
 .form-details {
-    max-width: 600px;
+    max-width: 90%;
+    width: 400px;
     margin: 40px auto;
     padding: 20px;
     background: rgb(186, 240, 161);
@@ -264,7 +265,8 @@ button, .btn {
 /* Style for the Sign Up form */
 
 .signup {
-    max-width: 400px;
+    max-width: 90%;
+    width: 400px;
     margin: 50px auto;
     padding: 20px;
     background-color: rgb(186, 240, 161);
