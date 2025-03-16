@@ -583,6 +583,10 @@ footer {
         margin: 0 auto;
     }
 
+    .search-list {
+        padding-bottom: 20px;
+    }
+
     /* Make footer text smaller for better spacing */
     footer {
         font-size: 12px;
