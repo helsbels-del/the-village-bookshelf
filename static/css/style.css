@@ -66,6 +66,10 @@ h1 {
     
 }
 
+.navigation form{
+    display: inline-block;
+}
+
 .nav-btn {
     /* display: flex; */
     flex-direction: column;

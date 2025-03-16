@@ -10,8 +10,8 @@ header {
 }
 
 main {
-    background-color: #4CAF50;         
-    
+    background-color: #4CAF50;  
+    padding: 10px;     
 }
 
 .hero {
@@ -64,6 +64,10 @@ h1 {
     text-align: center;
     justify-content: center;
     
+}
+
+.navigation form{
+    display: inline-block;
 }
 
 .nav-btn {

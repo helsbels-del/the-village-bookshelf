@@ -3,14 +3,13 @@ Village Bookshelf{% endblock %} {% block content %}
 
 <section class="list">
   <h2 class="welcome-message">
-    <i>Hello {% if user.is_authenticated %}{{ user.username }}{% else %}Guest{%
-      endif %}!</i>
+    <i>Hello {% if user.is_authenticated %}{{ user.username }}{% else %}Guest{% endif %}!</i>
   </h2>
   <p>Browse books available for swapping in your community.</p>
   <p>Now you are logged in you can request to swap books in the list below.</p>
   <p>Or please use the search bar below if you have a book or author in mind.</p>
   <p>You can never have too many books!</p>
-  
+
   <h2>Available Books</h2>
   <div class="book-list-container">
     <ul class="book-list">
