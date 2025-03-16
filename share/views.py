@@ -160,8 +160,10 @@ def request_swap(request, pk):
             recipient_list=[book.owner.email], 
             fail_silently=False,
         )
-    else:
-        messages.error(request, "This book has no registered owner email.")
+        messages.success(request, "Your swap request has been sent!")
     
-    messages.success(request, "Your swap request has been sent!")
+    else:
+        messages.error(request, "This book has no registered owner email. Your request has not been sent.")
+
     return redirect('book_detail', pk=pk)
+    
