@@ -122,7 +122,7 @@ h1 {
 }
 
 form {
-    max-width: 90%;
+    max-width: 100%;
     width: 300px;
     border-radius: 5px;
    
@@ -240,6 +240,10 @@ nav ul li a {
 
 h2 {
     text-align: center;
+}
+
+.form-book {
+    align-items: center;
 }
 
 .form-book .form-gp {
@@ -577,6 +581,10 @@ footer {
     .nav-btn {
         width: 100%;
     }
+
+    h2 {
+        font-size: 36px;
+    }
         
 }
 
@@ -620,6 +628,10 @@ footer {
     .about-title {
         font-size: 36px;
 
+    }
+
+    .about-text1 {
+        font-size: 32px;
     }
 
     
