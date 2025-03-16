@@ -88,12 +88,24 @@ def book_create(request):
     if request.method == "POST":
         form = BookForm(request.POST)
         if form.is_valid():
-            book = form.save(commit=False)
-            book.owner = request.user  # Assign the current user as the owner
-            book.save()
-            return redirect("book_list")
+            title = form.cleaned_data["title"]
+            author = form.cleaned_data["author"]
+
+            # Check if the book already exists for this user
+            existing_book = Books.objects.filter(title__iexact=title, owner=request.user).exists()
+
+            if existing_book:
+                messages.error(request, "You have already added this book.")
+            else:
+                book = form.save(commit=False)
+                book.owner = request.user
+                book.save()
+                messages.success(request, "Your book has been added successfully!")
+                return redirect("book_list")
+
     else:
         form = BookForm()
+
     return render(request, "books/book_form.html", {"form": form})
 
 

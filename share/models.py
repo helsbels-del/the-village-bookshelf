@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Books(models.Model):
     class Meta:
         verbose_name_plural = "Books"
+        unique_together = ('title', 'owner')   # so that user cannot add the same book twice
 
     # Basic details about the book
     title = models.CharField(max_length=200)
