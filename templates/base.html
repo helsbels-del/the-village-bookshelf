@@ -27,6 +27,13 @@
         <div>
             <a href="{% url 'home' %}" style="text-decoration: none;"></a>
             <h1>The Village Bookshelf</h1></a>
+        </div>
+        <div class="user-info">
+            {% if user.is_authenticated %}
+                Logged in as: {{ user.username }}
+            {% else %}
+                Not logged in
+            {% endif %}
         </div>               
     </header> 
     <main>
