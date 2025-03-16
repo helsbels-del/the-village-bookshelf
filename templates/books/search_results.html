@@ -17,6 +17,10 @@ Village Bookshelf{% endblock %} {% block content %}
 {% endif %}
 <nav class="navigation">
 <a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
-<a href="{% url 'search_books' %}" class="nav-btn">Return to Search</a>
+{% if user is_authenticated %}
+<a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
+{% else %}
+<a href="{% url 'home' %}" class="nav-btn">Return to Book List</a>
+{% endif %}
 </nav>
 {% endblock %}
