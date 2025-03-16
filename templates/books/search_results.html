@@ -8,18 +8,15 @@ Village Bookshelf{% endblock %} {% block content %}
 <ul class="search-list">
   {% for book in books %}
   <li class="results about-text" >
-    <a href="{% url 'book_detail' book.pk %}"
-      >{{ book.title }} by {{ book.author }}</a
-    >
+    <a href="{% url 'book_detail' book.pk %}">{{ book.title }} by {{ book.author }}</a>
   </li>
   {% endfor %}
 </ul>
 {% else %}
 <p>No books found "{{ query }}". Try a different search.</p>
 {% endif %}
-<nav class="navigation"></nav>
+<nav class="navigation">
 <a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
-
 <a href="{% url 'search_books' %}" class="nav-btn">Return to Search</a>
 </nav>
 {% endblock %}
