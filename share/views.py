@@ -66,8 +66,12 @@ def login_view(request):
 
 def search_books(request):
     query = request.GET.get('q', '').strip()  # .strip will allow white spaces in input
-    books = Books.objects.filter(title__icontains=query) if query else []
-    return render(request, 'books/search_results.html', {'books': books, 'query': query})
+    if query:
+        books = Books.objects.filter(title__icontains=query)
+    else:
+        return redirect('book_list')  # Redirect if no query
+    
+    return render(request, 'search_results.html', {'books': books, 'query': query})
 
 
 def book_list(request):
