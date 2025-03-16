@@ -22,7 +22,7 @@ The Village Bookshelf{% endblock %} {% block content %}
     <a href="{% url 'book_list' %}" class="nav-btn">Back to Book List</a>
     {% endif %} {% else %}
     <!-- If the user is not authenticated -->
-    <a href="{% url 'login' %}" class="nav-btn">Login to request a swap.</a>
+    <a href="{% url 'login' %}?next={{ request.path }}" class="nav-btn">Login to request a swap.</a>
     <a href="{% url 'home' %}" class="nav-btn">Back to Home</a>
     {% endif %}
   </nav>
