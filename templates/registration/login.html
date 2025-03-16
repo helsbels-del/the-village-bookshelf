@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block title %}Login | The
 Village Bookshelf{% endblock %} {% block content %}
-
+<div class="login-page">
 <h2>Login</h2>
 <form method="post">
   {% csrf_token %}
@@ -14,5 +14,5 @@ Village Bookshelf{% endblock %} {% block content %}
   <a href="{% url 'about' %}" class="nav-btn">About</a>   
   <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>        
 </nav>
-
+</div>
 {% endblock %}
