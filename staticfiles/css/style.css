@@ -62,11 +62,10 @@ h1 {
 }
 
 .welcome-message {
-    font-size: 5vw;
+    font-size: 7vw;
     color: #f9f9f9;
     margin-bottom: 10px;
-
-}
+   }
  
 .navigation {
     margin: 20px auto;
@@ -359,7 +358,7 @@ button, .btn {
 
 
 .about-text {
-    text-align: justify; /* Makes text evenly spread */
+    text-align: center
     line-height: 1.5; /* Adds breathing space between lines */
     padding: 10px 15px; /* Ensures text isn’t cramped on the sides */
     font-size: 16px; /* Increases readability */
