@@ -180,11 +180,10 @@ nav ul li a {
     text-decoration: none;
 }
 
-.hero, .list  {
-    background-size: cover;
-    background-position: center;
+.list  {
+    
     color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+   
     text-align: center;
 }
 
