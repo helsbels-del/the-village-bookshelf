@@ -33,20 +33,18 @@ Village Bookshelf{% endblock %} {% block content %}
   </div>
   <h3 class="about-title">Would you like to add another book?</h3>
   <!-- Add Book Navigation secion-->
-  <div class="button-container">
-    <nav class="navigation">
-      <form action="{% url 'book_create' %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="nav-btn">Add Book</button>
-      </form>
+  <nav class="navigation">
+    <form action="{% url 'book_create' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="nav-btn">Add Book</button>
+    </form>
 
-      <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="nav-btn">Logout</button>
-      </form>
-      <a href="{% url 'about' %}" class="nav-btn">About</a>
-    </nav>
-  </div>
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="nav-btn">Logout</button>
+    </form>
+    <a href="{% url 'about' %}" class="nav-btn">About</a>
+  </nav>
 </section>
 
 {% endblock %}
