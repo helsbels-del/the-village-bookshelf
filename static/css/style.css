@@ -10,7 +10,12 @@ header {
 }
 
 main {
-    background-image: url("/static/images/village-bridge.jpg");    
+    background-color: #4CAF50;  
+    padding: 10px;     
+}
+
+.hero {
+    background-image: url("/static/images/village-bridge.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -19,8 +24,6 @@ main {
     background-blend-mode: darken; /* Other options: multiply, overlay, etc. */
     padding: 20px 10px;
 }
-
-
 
 .logo {
     display: flex;
