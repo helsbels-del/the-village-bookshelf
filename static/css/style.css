@@ -351,14 +351,8 @@ button, .btn {
 
 /* About page styling */
 
-.about-text1 {
-    text-align: center;
-    font-size: 16px; /* Increases readability */
-}
-
-
 .about-text {
-    text-align: center
+    text-align: justify
     line-height: 1.5; /* Adds breathing space between lines */
     padding: 10px 15px; /* Ensures text isn’t cramped on the sides */
     font-size: 16px; /* Increases readability */
