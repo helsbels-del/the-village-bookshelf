@@ -96,6 +96,7 @@ h1 {
     border-radius: 20px;
     font-size: 16px;
     transition: 0.3s; 
+    width: 100%;
     max-width: 250px;
 }
 
