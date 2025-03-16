@@ -1,5 +1,9 @@
-{% extends 'base.html' %} {% load static %} {% block title %}Book List | The
-Village Bookshelf{% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Search Results | The Village Bookshelf{% endblock %}
+
+{% block content %}
 
 <h2 class="about-title">Search Results for "{{ query }}"</h2>
 
@@ -7,13 +11,13 @@ Village Bookshelf{% endblock %} {% block content %}
 
 <ul class="search-list">
   {% for book in books %}
-  <li class="results about-text" >
+  <li class="results about-text">
     <a href="{% url 'book_detail' book.pk %}">{{ book.title }} by {{ book.author }}</a>
   </li>
   {% endfor %}
 </ul>
 {% else %}
-<p>No books found "{{ query }}". Try a different search.</p>
+<p>No books found for "{{ query }}". Try a different search.</p>
 {% endif %}
 <nav class="navigation">
 <a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
