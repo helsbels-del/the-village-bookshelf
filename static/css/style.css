@@ -97,7 +97,7 @@ h1 {
     border-radius: 20px;
     font-size: 16px;
     transition: 0.3s; 
-    width: 80%;
+    width: 43%;
     max-width: 250px;
 }
 
@@ -421,9 +421,8 @@ button, .btn {
 .password-reset{
     max-width: 300px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 30px;
     background-color: #c7f1c9;
-    border-radius: 10px;
     text-align: center;
 }
 
