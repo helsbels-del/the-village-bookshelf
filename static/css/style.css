@@ -184,9 +184,10 @@ nav ul li a {
 
 .login-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Centers vertically */
+    height: 60vh;
 }
 
 
@@ -587,10 +588,6 @@ footer {
     .about-text1 {
         text-align: center;
         font-size: 20px;
-    }
-
-    .nav-btn {
-        width: 100%;
     }
 
     h2 {
