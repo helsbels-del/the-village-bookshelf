@@ -123,6 +123,7 @@ h1 {
 
 form {
     display: flex;
+    flex-direction: column;
     max-width: 100%;
     width: 300px;
     border-radius: 5px;
