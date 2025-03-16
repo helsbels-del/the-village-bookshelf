@@ -569,6 +569,10 @@ footer {
         margin-left: 50px;
         margin-right: 50px;
     }
+
+    .nav-btn {
+        width: 23%;
+    }
         
 }
 
@@ -579,13 +583,22 @@ footer {
 
     .about-text {
         margin-left: 100px;
-        margin-right: 50px;
+        margin-right: 100px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     ul.search-list{
         margin-left: 300px;
+    }
+
+    .nav-btn {
+        width: 100%;
+    }
+
+    .about-text {
+        margin-left: 200px;
+        margin-right: 200px;
     }
 }
 
@@ -596,7 +609,7 @@ footer {
 
     .about-text {
         margin-left: 500px;
-        margin-right: 50px;
+        margin-right: 500px;
         font-size: 24px;
     }
 
@@ -604,6 +617,8 @@ footer {
         font-size: 36px;
 
     }
+
+    
 }
 
 
