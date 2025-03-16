@@ -595,9 +595,9 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-    
+
     ul.search-list{
-        margin-left: 100px;
+        margin-left: 110px;
     }
 
     .about-text {
@@ -617,6 +617,10 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+
+    ul.search-list{
+        margin-left: 110px;
+    }
    
     .about-text {
         margin-left: 200px;
@@ -625,7 +629,10 @@ footer {
 }
 
 @media screen and (min-width: 1440px) {
-    
+
+    ul.search-list{
+        margin-left: 200px;
+    }   
 
     
     .about-text {
@@ -635,6 +642,10 @@ footer {
 }
 
 @media screen and (min-width: 2560px) {
+
+    ul.search-list{
+        margin-left: 300px;
+    }
    
     .about-text {
         margin-left: 600px;
