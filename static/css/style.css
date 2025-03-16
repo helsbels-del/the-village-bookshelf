@@ -621,8 +621,8 @@ footer {
     }
 
     .about-text {
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 200px;
+        margin-right: 200px;
     }
 }
 
@@ -633,8 +633,8 @@ footer {
 
     
     .about-text {
-        margin-left: 200px;
-        margin-right: 200px;
+        margin-left: 350px;
+        margin-right: 350px;
     }
 }
 
@@ -644,18 +644,18 @@ footer {
     }
 
     .about-text {
-        margin-left: 500px;
-        margin-right: 500px;
-        font-size: 24px;
+        margin-left: 600px;
+        margin-right: 600px;
+        font-size:36px;
     }
 
     .about-title {
-        font-size: 36px;
+        font-size: 42px;
 
     }
 
     .about-text1 {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     
