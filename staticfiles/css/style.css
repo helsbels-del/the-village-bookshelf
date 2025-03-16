@@ -121,6 +121,20 @@ h1 {
     color: white;
 }
 
+.button-gp {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button-gp button,
+.button-gp a {
+    min-width: 120px;
+    text-align: center;
+}
+
+
 form {
     display: flex;
     flex-direction: column;
