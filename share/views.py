@@ -55,6 +55,9 @@ def login_view(request):
             # Handle the redirect after login using the 'next' parameter
             next_url = request.GET.get('next', '/book_list/')  # Default to '/book_list/'
             return redirect(next_url)
+        else:
+            # If the form is invalid, display an error message
+            messages.error(request, "Invalid email or password. Please try again.")
     else:
         form = AuthenticationForm()
     
