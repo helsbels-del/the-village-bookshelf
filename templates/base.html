@@ -27,11 +27,12 @@
         <div>
             <a href="{% url 'home' %}" style="text-decoration: none;"></a>
             <h1>The Village Bookshelf</h1></a>
-        </div>
-        {% block content %}
-        {% endblock %}       
+        </div>               
     </header> 
     <main>
+        {% block content %}
+        {% endblock %}
+
         {% block hero %}
         <section class="hero">
             <h2>Welcome to The Village Bookshelf</h2>
