@@ -21,7 +21,7 @@
 {% endif %}
 <nav class="navigation">
 <a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
-{% if user is_authenticated %}
+{% if user.is_authenticated %}
 <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
 {% else %}
 <a href="{% url 'home' %}" class="nav-btn">Return to Book List</a>
