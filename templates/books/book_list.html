@@ -4,23 +4,16 @@ Village Bookshelf{% endblock %} {% block content %}
 <section class="list">
   <h2 class="welcome-message">
     <i
-      >Hello {% if user.is_authenticated %} {{ user.username }}
-      <p class="about-text">
-        You can now request to swap books that are available in the list below
-        or please use the search bar below to search for a book or author you
-        have in mind
-      </p>
-      {% else %}Guest{% endif %}!</i
+      >Hello {% if user.is_authenticated %}{{ user.username }}{% else %}Guest{%
+      endif %}!</i
     >
   </h2>
   <p>Browse books available for swapping in your community.</p>
-  <!-- Search form -->
-  <form method="GET" action="{% url 'search_books' %}">
-    <input type="text" name="q" placeholder="Search for books..." />
-    <br />
-    <button type="submit">Search</button>
-  </form>
-
+  <p>Now you are logged in you can request to swap books in the list below.</p>
+  <p>
+    Or please use the search bar below if you have a book or author in mind.
+  </p>
+  <p>You can never have too many books!</p>
   <h2>Available Books</h2>
   <div class="book-list-container">
     <ul class="book-list">
@@ -40,19 +33,20 @@ Village Bookshelf{% endblock %} {% block content %}
   </div>
   <h3 class="about-title">Would you like to add another book?</h3>
   <!-- Add Book Navigation secion-->
-  <div class="button-container"></div>
-  <nav class="navigation">
-    <form action="{% url 'book_create' %}" method="post">
-      {% csrf_token %}
-      <button type="submit" class="nav-btn">Add Book</button>
-    </form>
+  <div class="button-container">
+    <nav class="navigation">
+      <form action="{% url 'book_create' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="nav-btn">Add Book</button>
+      </form>
 
-    <form action="{% url 'logout' %}" method="post">
-      {% csrf_token %}
-      <button type="submit" class="nav-btn">Logout</button>
-    </form>
-    <a href="{% url 'about' %}" class="nav-btn">About</a>
-  </nav>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="nav-btn">Logout</button>
+      </form>
+      <a href="{% url 'about' %}" class="nav-btn">About</a>
+    </nav>
+  </div>
 </section>
 
 {% endblock %}
