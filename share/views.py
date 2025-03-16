@@ -127,6 +127,7 @@ def book_delete(request, pk):
     book = get_object_or_404(Books, pk=pk, owner=request.user)
     if request.method == "POST":
         book.delete()
+        messages.success(request, "The book has been deleted successfully!") 
         return redirect("book_list")
     return render(request, "books/book_confirm_delete.html", {"book": book})
 
