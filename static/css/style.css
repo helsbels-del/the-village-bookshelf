@@ -351,7 +351,7 @@ button, .btn {
 /* About page styling */
 
 .about-text {
-    text-align: justify;
+    text-align: left;
     line-height: 1.5; /* Adds breathing space between lines */
     padding: 10px 15px; /* Ensures text isn’t cramped on the sides */
     font-size: 16px; /* Increases readability */
@@ -564,6 +564,12 @@ footer {
     ul.search-list{
         margin-left: 200px;
     }
+
+    .about-text {
+        text-align: center;
+        margin-left: 100px;
+    }
+        
 }
 
 @media screen and (min-width: 1024px) {
