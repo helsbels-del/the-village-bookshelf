@@ -20,11 +20,11 @@
 <p>No books found for "{{ query }}". Try a different search.</p>
 {% endif %}
 <nav class="navigation">
-<a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
+
 {% if user.is_authenticated %}
 <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
 {% else %}
-<a href="{% url 'home' %}" class="nav-btn">Return to Book List</a>
+<a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
 {% endif %}
 </nav>
 {% endblock %}
