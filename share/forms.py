@@ -15,8 +15,8 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ["username", "email", "password1", "password2"]  # Ensure email is included
-    
+        fields = ["username", "email", "password1", "password2"]
+
     def clean_email(self):
         email = self.cleaned_data.get("email")
         if User.objects.filter(email=email).exists():
@@ -29,4 +29,3 @@ class CustomUserCreationForm(UserCreationForm):
         if commit:
             user.save()
         return user
-    

@@ -58,14 +58,14 @@ def login_view(request):
             user = form.get_user()
             login(request, user)
             # Handle the redirect after login using the 'next' parameter
-            next_url = request.GET.get('next', '/book_list/')  # Default to '/book_list/'
+            next_url = request.GET.get('next', '/book_list/')
             return redirect(next_url)
         else:
             # If the form is invalid, display an error message
             messages.error(request, "Invalid email or password. Please try again.")
     else:
         form = AuthenticationForm()
-    
+   
     return render(request, 'login.html', {'form': form})
 
 
@@ -74,7 +74,7 @@ def search_books(request):
     if query:
         books = Books.objects.filter(title__icontains=query)
         return render(request, 'books/search_results.html', {'books': books, 'query': query})
-    
+   
 
 def book_list(request):
     books = Books.objects.all().order_by('title')
@@ -134,7 +134,7 @@ def book_delete(request, pk):
     book = get_object_or_404(Books, pk=pk, owner=request.user)
     if request.method == "POST":
         book.delete()
-        messages.success(request, "The book has been deleted successfully!") 
+        messages.success(request, "The book has been deleted successfully!")
         return redirect("book_list")
     return render(request, "books/book_confirm_delete.html", {"book": book})
 
@@ -161,9 +161,9 @@ def request_swap(request, pk):
         send_mail(
             subject="Book Swap Request",
             message=(f"Hello {book.owner.username}, \n\n"
-                f"{request.user.username} has requested to swap your book '{book.title}'. Please make contact to arrange the swap."),
+                    f"{request.user.username} has requested to swap your book '{book.title}'. Please make contact to arrange the swap."),
             from_email="noreply@villagebookshelf.com",
-            recipient_list=[book.owner.email], 
+            recipient_list=[book.owner.email],
             fail_silently=False,
         )
         messages.success(request, "Your swap request has been sent!")
@@ -172,4 +172,3 @@ def request_swap(request, pk):
         messages.error(request, "This book has no registered owner email. Your request has not been sent.")
 
     return redirect('book_detail', pk=pk)
-    

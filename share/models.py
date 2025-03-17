@@ -23,7 +23,7 @@ class Books(models.Model):
     condition = models.CharField(max_length=10, choices=CONDITION_CHOICES, default='USED')
 
     # Book category or genre (optional)
-    genre = models.CharField(max_length=100, blank=True, null=True)  # Could be a ForeignKey 
+    genre = models.CharField(max_length=100, blank=True, null=True) 
     
     # User who owns the book
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
