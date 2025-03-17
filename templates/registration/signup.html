@@ -8,6 +8,44 @@
 <h2>Sign Up</h2>
 <form method="post" class="signup-form">
     {% csrf_token %}
+        <div class="signup-form">
+          <label for="{{ form.field_username.id_for_label }}">Username</label>
+          {{ form.field_name }}
+          {% if form.field_name.errors %}
+            <div class="error">{{ form.field_name.errors }}</div>
+          {% endif %}
+        </div>
+      
+        <!-- Repeat for other form fields -->
+        <div class="signup-form">
+          <label for="{{ form.email_field.id_for_label }}">Email</label>
+          {{ form.email_field }}
+          {% if form.email_field.errors %}
+            <div class="error">{{ form.other_email.errors }}</div>
+          {% endif %}
+        </div>
+      
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Repeat for other form fields -->
+      <div class="signup-form">
+        <label for="{{ form.password_field.id_for_label }}">Password</label>
+        {{ form.password_field }}
+        {% if form.password_field.errors %}
+          <div class="error">{{ form.other_password.errors }}</div>
+        {% endif %}
+      </div>
+    
+      <button type="submit">Submit</button>
+    </form>
+
+
+
+
+
+
+    
     <div class="signup-form-gp">
     {{ form.as_p }}
     </div>
