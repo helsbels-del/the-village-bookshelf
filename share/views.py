@@ -40,14 +40,15 @@ def home(request):
 
 
 def signup(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            pass  # Handle form submission
+            form.save()  # Save the user or perform any logic
+            return redirect('success_url')  # Redirect to a success page
     else:
         form = SignUpForm()
-
-    return render(request, 'registration/signup.html', {'form': form})           
+    
+    return render(request, 'books/signup.html', {'form': form})  # Ensure you return an HttpResponse
 
 
 def login_view(request):

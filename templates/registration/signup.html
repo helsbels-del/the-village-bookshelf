@@ -5,49 +5,23 @@
 
 {% block content %}
 <div class="signup">
-<h2>Sign Up</h2>
-<form method="post" class="signup-form">
-    {% csrf_token %}
-    <div class="signup-form">
-        <label for="{{ form.username.id_for_label }}">Username</label>
-        {{ form.username }}
-        {% if form.username.errors %}
-          <div class="error">{{ form.username.errors }}</div>
-        {% endif %}
-      </div>
-      
-        <!-- Repeat for other form fields -->
-        <div class="signup-form">
-            <label for="{{ form.email.id_for_label }}">Email</label>
-            {{ form.email }}
-            {% if form.email.errors %}
-              <div class="error">{{ form.email.errors }}</div>
-            {% endif %}
-          </div>
-      
-        <button type="submit">Submit</button>
-      </form>
+    <h2>Sign Up</h2>
 
-      <!-- Repeat for other form fields -->
-      <div class="signup-form">
-        <label for="{{ form.password.id_for_label }}">Password</label>
-        {{ form.password }}
-        {% if form.password.errors %}
-          <div class="error">{{ form.password.errors }}</div>
-        {% endif %}
-      </div>
-  
-      <!-- Submit Button -->
-      <button type="submit">Submit</button>
+    <form method="post" class="signup-form">
+        {% csrf_token %}
+        
+        <!-- Render entire form automatically -->
+        {{ form.as_p }}
+
+        <button type="submit">Sign Up</button>
     </form>
-    {% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-    <li class="{{ message.tags }}">{{ message }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  </div>   
-    
 
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>   
 {% endblock %}
