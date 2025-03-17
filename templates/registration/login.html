@@ -7,7 +7,7 @@ Village Bookshelf{% endblock %} {% block content %}
   {{ form.as_p }}
   <input type="hidden" name="next" value="{{ request.GET.next|default:'/book_list/' }}">
 
-  <nav class="navigation"></nav>
+  <nav class="navigation">
   <button type="submit" class="nav-btn">Login</button>
   <a href="{% url 'password_reset' %}" class="nav-btn">Forgot password?</a>
   <a href="{% url 'home' %}" class="nav-btn"> Home</a>
