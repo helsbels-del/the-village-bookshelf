@@ -1,5 +1,9 @@
-{% extends 'base.html' %} {% load static %} {% block title %}{{ book.title }} |
-The Village Bookshelf{% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Detail | The Village Bookshelf{% endblock %}
+
+{% block content %}
 <section class="book-detail">
   <h2 class="about-title">{{ book.title }}</h2>
   <p><strong>Author:</strong> {{ book.author }}</p>
