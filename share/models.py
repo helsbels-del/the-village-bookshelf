@@ -7,6 +7,7 @@ class Books(models.Model):
     class Meta:
         verbose_name_plural = "Books"
         unique_together = ('title', 'owner')   # so that user cannot add the same book twice
+        ordering = ['title']
 
     # Basic details about the book
     title = models.CharField(max_length=200)
