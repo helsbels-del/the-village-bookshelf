@@ -21,8 +21,13 @@ Village Bookshelf{% endblock %} {% block content %}
         </a>
 
         {% if user.is_authenticated and book.owner == user %}
-        <a href="{% url 'book_update' book.pk %}">Edit</a> |
-        <a href="{% url 'book_delete' book.pk %}">Delete</a>
+        <a href="{% url 'book_update' book.pk %}" class="btn edit-btn">
+          <i class="fas fa-edit"></i> Edit
+        </a>
+        <a href="{% url 'book_delete' book.pk %}" class="btn delete-btn">
+          <i class="fas fa-trash-alt"></i> Delete
+        </a>
+        
         {% endif %}
       </li>
       {% endfor %}
@@ -31,15 +36,16 @@ Village Bookshelf{% endblock %} {% block content %}
   <h3 class="about-title">Would you like to add another book?</h3>
   <!-- Add Book Navigation secion-->
   <nav class="navigation">
-    <form action="{% url 'book_create' %}" method="post">
-      {% csrf_token %}
-      <button type="submit" class="nav-btn">Add Book</button>
-    </form>
+    <a href="{% url 'book_create' %}" class="nav-btn">
+      <i class="fas fa-plus-circle"></i> Add Book
+    </a>
 
-    <form action="{% url 'logout' %}" method="post">
+    <form action="{% url 'logout' %}" method="post" style="display: inline;">
       {% csrf_token %}
-      <button type="submit" class="nav-btn">Logout</button>
-    </form>
+      <button type="submit" class="nav-btn" style="all: unset; cursor: pointer; vertical-align: middle;">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </form>    
     <a href="{% url 'about' %}" class="nav-btn">About</a>
   </nav>
   {% if messages %}

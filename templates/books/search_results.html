@@ -4,29 +4,29 @@
 {% block title %} Search Results | The Village Bookshelf{% endblock %}
 
 {% block content %}
-<div class="search-results-container">
-<h2 class="about-title">Search Results for "{{ query }}"</h2>
+  <h2 class="about-title">Search Results for "{{ query }}"</h2>
 
-{% if books %}
+  {% if books %}
+    <p>{{ books|length }} result{{ books|length|pluralize }} found.</p>
 
-<ul class="search-list">
-  {% for book in books %}
-  <li class="results about-text">
-    <a href="{% url 'book_detail' book.pk %}" class="book-link">{{ book.title }} by {{ book.author }}</a>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>No books found for "{{ query }}". Try a different search.</p>
-{% endif %}
+    <ul class="search-list">
+      {% for book in books %}
+        <li class="results">
+          <a href="{% url 'book_detail' book.pk %}">
+            {{ book.title }} by {{ book.author }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No books found for "{{ query }}". Try a different search.</p>
+  {% endif %}
 
-</div>
-<nav class="navigation">
-
-{% if user.is_authenticated %}
-<a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
-{% else %}
-<a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
-{% endif %}
-</nav>
+  <nav class="navigation">
+    {% if user.is_authenticated %}
+      <a href="{% url 'book_list' %}" class="nav-btn">← Back to Book List</a>
+    {% else %}
+      <a href="{% url 'home' %}" class="nav-btn">← Back to Home</a>
+    {% endif %}
+  </nav>
 {% endblock %}
