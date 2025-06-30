@@ -59,7 +59,7 @@ h1 {
     font-size: 7vw;
     color: #f9f9f9;
     margin-bottom: 10px;
-   }
+   }    
  
 .navigation {
     display: flex;
@@ -474,6 +474,50 @@ button, .btn {
 .about-title {
     margin-top: 40px;
 }
+
+.form-wrapper {
+    max-width: 90%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #d4f4d2;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .form-wrapper h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #222;
+  }
+  
+  .form-wrapper form {
+    margin-bottom: 1rem;
+  }
+  
+  .btn.primary-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .btn.primary-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-nav a {
+    display: block;
+    margin: 0.25rem 0;
+    color: #000;
+    text-decoration: underline;
+    font-size: 0.95rem;
+  }
+  
 
 
 /* Responsive Design */
