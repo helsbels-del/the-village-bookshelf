@@ -5,38 +5,39 @@
 
 {% block content %}
 <section class="book-detail">
-  <h2 class="about-title">{{ book.title }}</h2>
-  <p><strong>Author:</strong> {{ book.author }}</p>
-  <p class="about-text"><strong>Description:</strong> {{ book.description }}</p>
-  <p><strong>Owner:</strong> {{ book.owner.username }}</p>
+  <div class="book-info-box">
+    <h2 class="about-title">{{ book.title }}</h2>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p class="about-text"><strong>Description:</strong> {{ book.description }}</p>
+    <p><strong>Owner:</strong> {{ book.owner.username }}</p>
 
-  <nav class="navigation">
-    {% if user.is_authenticated %} {% if user != book.owner %}
-    <!-- If the user is authenticated and not the owner -->
-    <form method="POST" action="{% url 'request_swap' book.pk %}">
-      {% csrf_token %}
-      <button type="submit" class="nav-btn">Request Swap</button>
-      <a href="{% url 'book_list' %}" class="nav-btn">Back to Book List</a>
-    </form>
-    {% else %}
-    <!-- If the user is the owner -->
-    <p>This is your book.</p>
-    <a href="{% url 'book_update' book.pk %}" class="nav-btn">Edit</a>
-    <a href="{% url 'book_delete' book.pk %}" class="nav-btn">Delete</a>
-    <a href="{% url 'book_list' %}" class="nav-btn">Back to Book List</a>
-    {% endif %} {% else %}
-    <!-- If the user is not authenticated -->
-    <a href="{% url 'login' %}?next={{ request.path }}" class="nav-btn">Login to request a swap.</a>
-    <a href="{% url 'home' %}" class="nav-btn">Back to Home</a>
+    <div class="button-gp">
+      {% if user.is_authenticated %}
+        {% if user != book.owner %}
+          <form method="POST" action="{% url 'request_swap' book.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="nav-btn"><i class="fas fa-exchange-alt"></i> Request Swap</button>
+          </form>
+        {% else %}
+          <p><i>This is your book.</i></p>
+          <a href="{% url 'book_update' book.pk %}" class="nav-btn"><i class="fas fa-edit"></i> Edit</a>
+          <a href="{% url 'book_delete' book.pk %}" class="nav-btn"><i class="fas fa-trash-alt"></i> Delete</a>
+        {% endif %}
+        <a href="{% url 'book_list' %}" class="nav-btn">Back to Book List</a>
+      {% else %}
+        <a href="{% url 'login' %}?next={{ request.path }}" class="nav-btn">Login to request a swap.</a>
+        <a href="{% url 'home' %}" class="nav-btn">Back to Home</a>
+      {% endif %}
+    </div>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
     {% endif %}
-  </nav>
-
-  {% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-    <li class="{{ message.tags }}">{{ message }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
+  </div>
 </section>
+
 {% endblock %}
