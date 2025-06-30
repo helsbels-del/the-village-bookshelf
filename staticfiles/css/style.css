@@ -163,17 +163,6 @@ button {
     cursor: pointer;
 }
 
-/* .navigation button {
-    background-color: #ff9800; /* Adjusted to match search button */
-    /*color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-} */
-
 button:hover {
     background: #0056b3;
 }
@@ -269,6 +258,28 @@ nav ul li a {
 h2 {
     text-align: center;
 }
+
+.search-results-container {
+    margin-top: 30px;
+}
+
+.results a {
+    display: block;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+    max-width: 600px;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+}
+
+.results a:hover {
+    background: #e0f8e9;
+}
+
 
 .form-book {
     align-items: center;
@@ -477,7 +488,13 @@ footer {
     background:#f9f9f9;
     margin: 20px auto;
     color: #333;
-  }
+}
+
+.search-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+ 
 /* Customise scrollbar */
 
 .book-list-container::-webkit-scrollbar {
@@ -518,6 +535,12 @@ footer {
     margin-bottom: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     }
+
+.book-link:hover {
+    color: #ff9800;
+    text-decoration: underline;
+}
+    
 
 /* Hover Effect for Book Items */
 .book-item:hover {

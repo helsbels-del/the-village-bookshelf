@@ -1,17 +1,39 @@
-{% extends 'base.html' %} {% load static %} {% block title %}Login | The Village
-Bookshelf{% endblock %} {% block content %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <input    type="hidden"    name="next"    value="{{ request.GET.next|default:'/book_list/' }}">
+{% extends 'base.html' %}
+{% load static %}
 
-  <nav class="navigation">
-    <button type="submit" class="nav-btn">Login</button>
-    <a href="{% url 'password_reset' %}" class="nav-btn">Forgot password?</a>
-    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
-    <a href="{% url 'about' %}" class="nav-btn">About</a>
-    <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
-  </nav>
-</form>
+{% block title %}Login | The Village Bookshelf{% endblock %}
 
+{% block content %}
+<div class="signup">
+  <h2>Login to The Village Bookshelf</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    {% if form.errors %}
+    <div class="form-errors">
+      <ul>
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ request.GET.next|default:'/book_list/' }}">
+    <button type="submit" class="btn">Login</button>
+  </form>
+</div>
+
+<nav class="navigation">
+  <a href="{% url 'password_reset' %}" class="nav-btn">Forgot password?</a>
+  <a href="{% url 'signup' %}" class="nav-btn">Create an account</a>
+  <a href="{% url 'home' %}" class="nav-btn">Home</a>
+  <a href="{% url 'about' %}" class="nav-btn">About</a>
+</nav>
 {% endblock %}
