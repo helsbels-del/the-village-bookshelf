@@ -1,43 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} About | The Village Bookshelf{% endblock %}
+{% block title %}About | The Village Bookshelf{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<section class="about-section">
     <h2 class="about-title">About The Village Bookshelf</h2>
-    <p class="about-text">The Village Bookshelf is a platform for sharing books within the local communities.<br>
-    Helping to promote literacy and sustainability by being able to easily swap books with others in the local area.<br>
-    Who wouldn't want to join a local book-sharing community!<br>
-    You may find that book you've always been looking for!</p>
-</div>
-<div class="about-gp">
-  <h3 class="about-title">How it works</h3>
-  <p class="about-text">If it is your first visit to the site, you can search for books via the search engine or scroll through the available books in the scroll bar window on the home page.
-  If you see a book that you like and want to reqeust a swap, you need to be signed up and logged in. 
-  <br><br>
-  Create an account by clicking on the signup link which is found on the home screen, the about screen and the login screen.
-  <br><br>
-  Once you have created an account you will be directed to the logged in page and now when you click on a link from the book list in the scroll bar window, to a book detail page, 
-  you will be able to request a swap on any book that you haven't added yourself.
-  <br><br>
-  Now as a logged in user you can also add your own book by clicking on the add book button, that can be found on the logged in book list page, adding the required details then pressing save.
-  Your book will now be available for other users to view and request.
-  <br><br>
-  Once you make a request for a swap, the book owner will recieve an email message to let them know about the swap request.
-  <br><br>
-  Happy book swapping!
-  </p>
-</div>
+    <p class="about-text">
+        The Village Bookshelf is a platform for sharing books within local communities.
+        <br><br>
+        We promote literacy and sustainability by making it easy to swap books with your neighbours. 
+        You might finally find that one book you’ve been searching for!
+    </p>
 
-<nav class="navigation">
-    {% if user.is_authenticated %}
-    <a href="{% url 'book_list' %}" class="nav-btn"> Return to Book List</a>
-    {% else %}    
-    <a href="{% url 'home' %}" class="nav-btn"> Home</a>
-    <a href="{% url 'login' %}" class="nav-btn">Login</a>
-    <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>{% endif %} 
-  </nav>
+    <h3 class="about-title">How It Works</h3>
+    <p class="about-text">
+        New to the site? Start by searching for books using the search bar or browsing the scrolling list on the homepage.
+        <br><br>
+        To request a book swap, you’ll need to sign up and log in. You can sign up from the Home, About, or Login pages.
+        <br><br>
+        Once logged in, click on any book (not added by you) to view its detail page and request a swap.
+        <br><br>
+        You can also add your own books to the library from the Book List page. Just click “Add Book,” fill out the form, and your listing will be live.
+        <br><br>
+        When someone requests your book, you’ll receive an email notification.
+        <br><br>
+        Happy book swapping!
+    </p>
 
-
+    </section>
 {% endblock %}

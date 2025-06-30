@@ -18,23 +18,40 @@
     <header>
         <div class="logo">
             <a href="{% url 'home' %}">
-            <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image1"></a>
+            <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo of books and flowers" id="image1"></a>
             <a href="{% url 'home' %}">
-            <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image2"></a>
+            <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo of books and flowers" id="image2"></a>
             <a href="{% url 'home' %}">
-            <img src="{% static 'images/books-small.png' %}" alt="Books and flowers" id="image3"></a>
+            <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo of books and flowers" id="image3"></a>
         </div>
         <div>
             <a href="{% url 'home' %}" style="text-decoration: none;"></a>
             <h1>The Village Bookshelf</h1>
         </div>
+        <nav class="nav-bar">
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-btn">Logout</button>
+                </form>
+                <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
+                <a href="{% url 'about' %}" class="nav-btn">About</a>
+            {% else %}
+                <a href="{% url 'home' %}" class="nav-btn">Home</a>
+                <a href="{% url 'about' %}" class="nav-btn">About</a>
+                <a href="{% url 'login' %}" class="nav-btn">Login</a>
+                <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
+            {% endif %}
+        </nav>
+        
         <div class="user-info">
             {% if user.is_authenticated %}
-                Logged in as: {{ user.username }}
+                <p><i class="fas fa-user"></i> {{ user.username }}</p>
             {% else %}
-                Not logged in
+                <p><i class="fas fa-sign-in-alt"></i> Guest</p>
             {% endif %}
-        </div>               
+        </div>           
+
     </header> 
     <main>
         {% block content %}
