@@ -5,28 +5,31 @@
 
 {% block content %}
 <div class="signup">
-  <h2>Sign Up for The Village Bookshelf</h2>
   <form method="POST">
-    {% csrf_token %}
-    {% if form.errors %}
-      <div class="form-errors">
-        <ul>
-          {% for field in form %}
-            {% for error in field.errors %}
-              <li><strong>{{ field.label }}:</strong> {{ error }}</li>
-            {% endfor %}
+  {% csrf_token %}
+  {% if form.errors %}
+    <div class="form-errors">
+      <ul>
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li><strong>{{ field.label }}:</strong> {{ error }}</li>
           {% endfor %}
-          {% for error in form.non_field_errors %}
-            <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-    {{ form.as_p }}
-    <input type="hidden" name="next" value="{{ request.GET.next|default:'/book_list/' }}">
-    <button type="submit" class="btn">Sign Up</button>
-  </form>
-  <p class="auth-links">Already have an account? <a href="{% url 'login' %}" class="btn-link">Login here</a></p>
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  {{ form.as_p }}
+  <input type="hidden" name="next" value="{{ request.GET.next|default:'/book_list/' }}">
+  <button type="submit" class="btn">Sign Up</button>
+</form>
 </div>
 
+<nav class="navigation">
+  <a href="{% url 'login' %}" class="nav-btn">Already have an account? Login</a>   
+  <a href="{% url 'home' %}" class="nav-btn"> Home</a>
+  <a href="{% url 'about' %}" class="nav-btn">About</a>
+</nav>
 {% endblock %}
