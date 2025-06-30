@@ -533,6 +533,21 @@ footer {
     font-size: 0.9em;
 }
 
+.edit-btn, .delete-btn {
+    margin-left: 10px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: #ccc;
+    text-decoration: none;
+}
+.edit-btn:hover {
+    background-color: #d4f1d4;
+}
+.delete-btn:hover {
+    background-color: #f8d7da;
+}
+
+
 /* Edit/Delete Links */
 .book-item a {
     color: #007bff;
@@ -581,8 +596,32 @@ footer {
     }
 
     .search-list {
-        padding-bottom: 20px;
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 20px;
     }
+    
+    .results a {
+        display: block;
+        background: #f9f9f9;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px auto;
+        max-width: 600px;
+        color: #333;
+        text-decoration: none;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        transition: background 0.3s ease;
+    }
+    
+    .results a:hover {
+        background: #e0f8e9;
+    }
+    
+    .about-title {
+        margin-top: 40px; /* optional spacing improvement */
+    }
+    
 
     /* Make footer text smaller for better spacing */
     footer {
