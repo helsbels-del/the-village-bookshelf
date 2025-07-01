@@ -1,55 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Load static files -->
     {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="The Village Bookshelf, community-driven, book swapping platform, readers, share, discover, exchange books, join us, book lovers, promote sustainable reading habits."
-    >
-
+    />
     <title>{% block title %}The Village Bookshelf{% endblock %}</title>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    >
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="{% static 'images/favicon.ico' %}"
-    >
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
   </head>
+
   <body>
     <header>
       <div class="logo">
         <a href="{% url 'home' %}">
-          <img
-            src="{% static 'images/books-small.png' %}"
-            alt="The Village Bookshelf logo of books and flowers"
-            id="image1"
-        /></a>
+          <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" id="image1" />
+        </a>
         <a href="{% url 'home' %}">
-          <img
-            src="{% static 'images/books-small.png' %}"
-            alt="The Village Bookshelf logo of books and flowers"
-            id="image2"
-        /></a>
+          <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" id="image2" />
+        </a>
         <a href="{% url 'home' %}">
-          <img
-            src="{% static 'images/books-small.png' %}"
-            alt="The Village Bookshelf logo of books and flowers"
-            id="image3"
-        /></a>
+          <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" id="image3" />
+        </a>
       </div>
+
       <div>
         <a href="{% url 'home' %}" style="text-decoration: none">
           <h1>The Village Bookshelf</h1>
         </a>
       </div>
+
       <nav class="nav-bar">
         {% if user.is_authenticated %}
         <form action="{% url 'logout' %}" method="post" style="display: inline">
@@ -74,23 +61,32 @@
         {% endif %}
       </div>
     </header>
-    <main>
-      {% if messages %}
-      <div class="message-box">
-        {% for message in messages %}
-        <div class="message {{ message.tags }}">{{ message }}</div>
-        {% endfor %}
-      </div>
-      {% endif %} {% block content %} {% endblock %} {% block hero %}
-      <section class="hero">
-        <h2>Welcome to The Village Bookshelf</h2>
-        <p>Share, discover, and borrow books from your local community.</p>
 
-        <!-- Search Form -->
-        <form method="GET" action="{% url 'search_books' %}">
-          <input type="text" name="q" placeholder="Search for books..." />
-          <button type="submit">Search</button>
-        </form>
+    <main>
+      <div class="container">
+        {% if messages %}
+        <div class="message-box">
+          {% for message in messages %}
+          <div class="message {{ message.tags }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+      </div>
+
+      {% block hero %}
+      <section class="hero">
+        <div class="container">
+          <h2>Welcome to The Village Bookshelf</h2>
+          <p>Share, discover, and borrow books from your local community.</p>
+
+          <!-- Search Form -->
+          <form method="GET" action="{% url 'search_books' %}">
+            <input type="text" name="q" placeholder="Search for books..." />
+            <button type="submit">Search</button>
+          </form>
+        </div>
       </section>
       {% endblock %}
     </main>
