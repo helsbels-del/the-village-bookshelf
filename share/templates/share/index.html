@@ -1,17 +1,23 @@
-{% extends 'base.html' %} {% load static %} {% block title %}Home | The Village
-Bookshelf{% endblock %} {% block content %}
-<section class="list">
-  <h2>Available Books</h2>
-  <div class="book-list-container">
-    <ul class="book-list">
-      {% for book in page_obj %}
-      <li class="book-item">
-        <a href="{% url 'book_detail' book.pk %}" class="book-link">
-          <strong>{{ book.title }}</strong> by {{ book.author }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | The Village Bookshelf{% endblock %}
+
+{% block content %}
+<div class="container">
+  <section class="list">
+    <h2>Available Books</h2>
+    <div class="book-list-container">
+      <ul class="book-list">
+        {% for book in page_obj %}
+        <li class="book-item">
+          <a href="{% url 'book_detail' book.pk %}" class="book-link">
+            <strong>{{ book.title }}</strong> by {{ book.author }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
 {% endblock %}

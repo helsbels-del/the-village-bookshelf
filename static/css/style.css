@@ -20,7 +20,7 @@ h2 {
   text-align: center;
 }
 
-/* Containers for layour */
+/* Containers for layout */
 
 .container {
   max-width: 1200px;
@@ -46,6 +46,16 @@ main {
   border-radius: 5px;
   font-size: 14px;
 }
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+  }
+ 
 
 /* Hero Section */
 
