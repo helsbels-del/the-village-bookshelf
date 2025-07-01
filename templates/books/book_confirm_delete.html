@@ -4,18 +4,20 @@
 {% block title %}Confirm Delete | The Village Bookshelf{% endblock %}
 
 {% block content %}
-<section class="confirm-delete">
-  <div class="confirm-delete-box">
-    <h2 class="about-title">Confirm Deletion</h2>
-    <p>Are you sure you want to delete <strong>"{{ book.title }}"</strong>?</p>
+<div class="container">
+  <section class="confirm-delete">
+    <div class="confirm-delete-box">
+      <h2 class="about-title">Confirm Deletion</h2>
+      <p>Are you sure you want to delete <strong>"{{ book.title }}"</strong>?</p>
 
-    <div class="button-gp">
-      <form method="post">
-        {% csrf_token %}
-        <button type="submit" class="nav-btn"><i class="fas fa-trash-alt"></i> Yes, delete</button>
-      </form>
-      <a href="{% url 'book_list' %}" class="nav-btn"><i class="fas fa-times"></i> Cancel</a>
+      <div class="button-gp">
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit" class="nav-btn"><i class="fas fa-trash-alt"></i> Yes, delete</button>
+        </form>
+        <a href="{% url 'book_list' %}" class="nav-btn"><i class="fas fa-times"></i> Cancel</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 {% endblock %}

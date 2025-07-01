@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Logout | The Village Bookshelf{% endblock %}
+{% block title %}Logout | The Village Bookshelf{% endblock %}
 
 {% block content %}
-<div class="password-reset">
-  <h2 class="about-title">You have been logged out</h2>
-  <p>Thank you for visiting. Come back soon!</p>
-  <nav class="navigation">
-    <a href="{% url 'login' %}" class="nav-btn"><i class="fas fa-sign-in-alt"></i> Login Again</a>
-    <a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
-  </nav>
+<div class="container">
+  <div class="password-reset">
+    <h2 class="about-title">You have been logged out</h2>
+    <p>Thank you for visiting. Come back soon!</p>
+    <nav class="navigation">
+      <a href="{% url 'login' %}" class="nav-btn"><i class="fas fa-sign-in-alt"></i> Login Again</a>
+      <a href="{% url 'home' %}" class="nav-btn">Return to Home</a>
+    </nav>
+  </div>
 </div>
 {% endblock %}
