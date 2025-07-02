@@ -46,16 +46,7 @@
     <nav class="navigation">
       <a href="{% url 'book_create' %}" class="nav-btn">
         <i class="fas fa-plus-circle"></i> Add Book
-      </a>
-
-      <form action="{% url 'logout' %}" method="post" style="display: inline;">
-        {% csrf_token %}
-        <button type="submit" class="nav-btn" style="all: unset; cursor: pointer; vertical-align: middle;">
-          <i class="fas fa-sign-out-alt"></i> Logout
-        </button>
-      </form>    
-
-      <a href="{% url 'about' %}" class="nav-btn">About</a>
+      </a>      
     </nav>
 
     {% if messages %}
