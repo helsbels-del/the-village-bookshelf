@@ -81,6 +81,10 @@ def book_list(request):
     page_obj = paginator.get_page(page_number)
     return render(request, "books/book_list.html", {"page_obj": page_obj})
 
+def all_books(request):
+    books = Books.objects.all()
+    return render(request, 'share/all_books.html', {'books': books})
+
 
 def book_detail(request,  pk):
     book = get_object_or_404(Books, pk=pk)

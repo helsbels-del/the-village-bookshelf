@@ -8,6 +8,7 @@ from .views import custom_404
 urlpatterns = [
     path('', views.home, name='home'),  # Homepage for "share" app
     path('book_list/', views.book_list, name="book_list"),  # Logged in page now shows books
+    path('all_books/', views.all_books, name='all_books'),
     path('signup/', views.signup, name='signup'),  # Signup page
     path('login/', views.login_view, name='login'),  # Custom login page
     path('logout/', LogoutView.as_view(), name='logout'),  # Built-in logout view
