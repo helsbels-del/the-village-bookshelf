@@ -113,23 +113,6 @@ footer {
   margin-bottom: 10px;
 }
 
-/* Logo */
-
-.logo {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.logo img {
-  padding-top: 20px;
-  width: 80%;
-  max-width: 250px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 /* Navigation */
 
 .navigation,
@@ -582,43 +565,48 @@ form {
     color: #721c24;
   }
   
-
-
-
-
-/* Scrollbar */
-
-.book-list-container::-webkit-scrollbar {
-  width: 8px;
-}
-.book-list-container::-webkit-scrollbar-thumb {
-  background: #ff9800;
-  border-radius: 10px;
-}
-.book-list-container::-webkit-scrollbar-thumb:hover {
-  background: #ff5722;
-}
-.book-list-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+/* Show only the appropriate logo layout */
+.logo-single {
+  display: none;
+  text-align: center;
+  padding-top: 20px;
 }
 
-.search-list li {
-    margin-bottom: 10px;
-  }
-  
+.logo-single img {
+  width: 80%;
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.logo-triple {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.logo-triple img {
+  max-width: 200px;
+  height: auto;
+}
 
 /* Responsive Media Queries */
+
+@media (max-width: 767px) {
+  .logo-single {
+    display: block;
+  }
+
+  .logo-triple {
+    display: none;
+  }
+}
 
 @media (max-width: 767px) {
   .navigation {
     flex-direction: column;
     align-items: center;
-  }
-
-  .logo img {
-    max-width: 80%;
-    max-height: 100px;
   }
 
   .container {

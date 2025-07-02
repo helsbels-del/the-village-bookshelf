@@ -14,30 +14,56 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon.ico' %}"
+    />
   </head>
 
   <body>
     <header>
-      <!-- Single logo for small screens -->
-  <div class="logo-single">
-    <a href="{% url 'home' %}">
-      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
-    </a>
-  </div>
+      <!-- Mobile logo -->
+      <div class="logo-single">
+        <a href="{% url 'home' %}">
+          <img
+            src="{% static 'images/books-small.png' %}"
+            alt="The Village Bookshelf logo"
+          />
+        </a>
+      </div>
 
-  <!-- Triple logo for larger screens -->
-  <div class="logo-triple">
-    <a href="{% url 'home' %}">
-      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
-    </a>
-    <a href="{% url 'home' %}">
-      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
-    </a>
-    <a href="{% url 'home' %}">
-      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
-    </a>
+      <!-- Desktop triple logo -->
+      <div class="logo-triple">
+        <a href="{% url 'home' %}">
+          <img
+            src="{% static 'images/books-small.png' %}"
+            alt="The Village Bookshelf logo"
+          />
+        </a>
+        <a href="{% url 'home' %}">
+          <img
+            src="{% static 'images/books-small.png' %}"
+            alt="The Village Bookshelf logo"
+          />
+        </a>
+        <a href="{% url 'home' %}">
+          <img
+            src="{% static 'images/books-small.png' %}"
+            alt="The Village Bookshelf logo"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="{% url 'home' %}" style="text-decoration: none"></a>
+        <h1>The Village Bookshelf</h1>
+      </div>
+      <div class="user-info">
+        {% if user.is_authenticated %} Logged in as: {{ user.username }} {% else
+        %} Not logged in {% endif %}
+      </div>
 
+      <!-- Navigation buttons -->
       <nav class="nav-bar">
         {% if user.is_authenticated %}
         <form action="{% url 'logout' %}" method="post" style="display: inline">
@@ -54,6 +80,7 @@
         {% endif %}
       </nav>
 
+      <!-- User info badge -->
       <div class="user-info">
         {% if user.is_authenticated %}
         <p><i class="fas fa-user"></i> {{ user.username }}</p>
@@ -65,6 +92,7 @@
 
     <main>
       <div class="container">
+        <!-- Optional flash messages -->
         {% if messages %}
         <div class="message-box">
           {% for message in messages %}
@@ -73,6 +101,7 @@
         </div>
         {% endif %}
 
+        <!-- Main page content -->
         {% block content %}{% endblock %}
       </div>
 
