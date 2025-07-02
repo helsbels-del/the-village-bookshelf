@@ -19,23 +19,24 @@
 
   <body>
     <header>
-      <div class="logo">
-        <a href="{% url 'home' %}">
-          <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" id="image1" />
-        </a>
-        <a href="{% url 'home' %}">
-          <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" id="image2" />
-        </a>
-        <a href="{% url 'home' %}">
-          <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" id="image3" />
-        </a>
-      </div>
+      <!-- Single logo for small screens -->
+  <div class="logo-single">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
+    </a>
+  </div>
 
-      <div>
-        <a href="{% url 'home' %}" style="text-decoration: none">
-          <h1>The Village Bookshelf</h1>
-        </a>
-      </div>
+  <!-- Triple logo for larger screens -->
+  <div class="logo-triple">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
+    </a>
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
+    </a>
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/books-small.png' %}" alt="The Village Bookshelf logo" />
+    </a>
 
       <nav class="nav-bar">
         {% if user.is_authenticated %}
