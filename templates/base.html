@@ -58,11 +58,6 @@
         <a href="{% url 'home' %}" style="text-decoration: none"></a>
         <h1>The Village Bookshelf</h1>
       </div>
-      <div class="user-info">
-        {% if user.is_authenticated %} Logged in as: {{ user.username }} {% else
-        %} Not logged in {% endif %}
-      </div>
-
       <!-- Navigation buttons -->
       <nav class="nav-bar">
         {% if user.is_authenticated %}
@@ -105,20 +100,7 @@
         {% block content %}{% endblock %}
       </div>
 
-      {% block hero %}
-      <section class="hero">
-        <div class="container">
-          <h2>Welcome to The Village Bookshelf</h2>
-          <p>Share, discover, and borrow books from your local community.</p>
-
-          <!-- Search Form -->
-          <form method="GET" action="{% url 'search_books' %}">
-            <input type="text" name="q" placeholder="Search for books..." />
-            <button type="submit">Search</button>
-          </form>
-        </div>
-      </section>
-      {% endblock %}
+      
     </main>
 
     <footer>

@@ -1,9 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}Home | The Village Bookshelf{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}Home | The Village
+Bookshelf{% endblock %} {% block content %}
 <div class="container">
   <section class="list">
     <h2>Latest Books</h2>
@@ -24,5 +20,17 @@
 <nav class="navigation">
   <a href="{% url 'all_books' %}" class="nav-btn">View All Books</a>
 </nav>
+{% block hero %}
+<section class="hero">
+  <div class="container">
+    <h2>Welcome to The Village Bookshelf</h2>
+    <p>Share, discover, and borrow books from your local community.</p>
 
-{% endblock %}
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'search_books' %}">
+      <input type="text" name="q" placeholder="Search for books..." />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</section>
+{% endblock %} {% endblock %}
