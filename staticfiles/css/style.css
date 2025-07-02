@@ -89,18 +89,25 @@ h1 {
     border-radius: 20px;
     font-size: 16px;
     min-width: 120px;
+    text-decoration: none;
 }
 
 button.nav-btn {
-    background-color: #007bff; /* Example color */
-    color: white;
-    border: none;
+    background: #c7f1c9;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 20px;
+    padding: 8px;
+    font-size: 16px;
     cursor: pointer;
-}
-
-button.nav-btn:hover {
-    background-color: #0056b3;
-}
+    min-width: 120px;
+  }
+  
+  button.nav-btn:hover {
+    background: #333;
+    color: white;
+  }
+  
 
 .button-container {
     display:flex;
@@ -121,6 +128,7 @@ button.nav-btn:hover {
 .nav-btn:hover {
     background: #333;
     color: white;
+    text-decoration: underline;
 }
 
 .button-gp {
