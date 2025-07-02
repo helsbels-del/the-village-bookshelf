@@ -32,11 +32,8 @@ def my_share(request):
 
 def home(request):
     """Homepage for the book-sharing app."""
-    books = Books.objects.all()
-    paginator = Paginator(books, 1000)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'share/index.html', {'page_obj': page_obj})
+    latest_books = Books.objects.order_by('-id')[:6]  # Show latest 6 books only
+    return render(request, 'share/index.html', {'latest_books': latest_books})
 
 
 def signup(request):
