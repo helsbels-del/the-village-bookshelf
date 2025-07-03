@@ -44,6 +44,7 @@ class SwapRequest(models.Model):
     book = models.ForeignKey(Books, on_delete=models.CASCADE, related_name="swap_requests")
     timestamp = models.DateTimeField(auto_now_add=True)
 
-    def _str_(self):
-        return f"{self.requester} requested {self.title}"
+    def __str__(self):
+        return f"{self.requester} requested {self.book.title}"
+
     

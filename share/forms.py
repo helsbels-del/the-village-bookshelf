@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 class BookForm(forms.ModelForm):
     class Meta:
         model = Books
-        fields = ["title", "author", "genre", "description"]
+        fields = [
+            'title', 'author', 'description', 'condition', 'genre', 'available']
 
 
 class SignUpForm(UserCreationForm):
