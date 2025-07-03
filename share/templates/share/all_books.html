@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% load static %} {% block title %}All Books | The
+Village Bookshelf{% endblock %} {% block content %}
+<div class="container">
+  <h2 class="section-title">All Available Books</h2>
+  <p class="swap-prompt">
+    Want to swap or request a book?
+    <a href="{% url 'login' %}">Login</a> or
+    <a href="{% url 'signup' %}">Sign Up</a>.
+  </p>
+
+  <div class="book-list-container">
+    <ul class="book-list">
+      {% for book in page_obj %}
+        <li class="book-item">
+          <div class="book-info">
+            <a href="{% url 'book_detail' book.pk %}" class="book-link">
+              <strong class="book-title">{{ book.title }}</strong>
+              <span class="book-author"> by {{ book.author }}</span>
+            </a>
+          </div>
+        </li>
+      {% empty %}
+        <li>No books found.</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination">
+    {% if page_obj.has_previous %}
+    <a href="?page=1">&laquo; First</a>
+    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    <span class="current"
+      >Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span
+    >
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+
+

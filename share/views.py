@@ -83,8 +83,11 @@ def book_list(request):
 
 
 def all_books(request):
-    books = Books.objects.all()
-    return render(request, 'share/all_books.html', {'books': books})
+    books = Books.objects.all().order_by('title')  
+    paginator = Paginator(books, 10)  
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'share/all_books.html', {'page_obj': page_obj})
 
 
 def book_detail(request,  pk):

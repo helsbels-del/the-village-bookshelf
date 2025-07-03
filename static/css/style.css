@@ -18,14 +18,16 @@ h1 {
 
 h2 {
   text-align: center;
+   color: #c7f1c9;
 }
 
 /* Containers for layout */
 
 .container {
-  max-width: 1200px;
+  width: 90%;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
 }
 
 header,
@@ -41,6 +43,21 @@ footer {
     padding: 15px;
     font-size: 14px;
   }
+
+  .swap-prompt {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  .swap-prompt a {
+    color: #004a7c;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
 
 /* User info tag */
 
@@ -80,6 +97,7 @@ footer {
 
 .hero p {
   font-size: 18px;
+  color: #c7f1c9;
 }
 
 .hero form {
@@ -601,9 +619,7 @@ form {
   .logo-triple {
     display: none;
   }
-}
 
-@media (max-width: 767px) {
   .navigation {
     flex-direction: column;
     align-items: center;
@@ -615,7 +631,7 @@ form {
 
   .welcome-message,
   h1 {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   footer {
