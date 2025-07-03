@@ -348,6 +348,61 @@ button,
   opacity: 0.8;
 }
 
+/* Style for book-list */
+
+.book-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin: 1rem 0;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.book-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.book-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.book-author {
+  color: #007bff;
+  font-size: 0.95rem;
+}
+
+.book-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.book-btn {
+  background-color: #ff9900;
+  color: #fff;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.2s ease;
+}
+
+.book-btn:hover {
+  background-color: #e68900;
+}
+
 /* Style for the Sign Up form */
 
 .signup {
@@ -601,6 +656,35 @@ footer {
   margin-bottom: 0;
 }
 
+.pagination {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.pagination a {
+  background-color: #c7f1c9;
+  color: #333;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid #333;
+}
+
+.pagination a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.pagination .current {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+
 @media screen and (max-width: 425px) {
   #image2,
   #image3 {
@@ -639,6 +723,14 @@ footer {
   footer {
     font-size: 12px;
     padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .welcome-message {
+    font-size: 20px !important;
   }
 }
 

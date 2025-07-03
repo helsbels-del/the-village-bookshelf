@@ -2,43 +2,79 @@
 {% load static %}
 
 {% block title %}Book List | The Village Bookshelf{% endblock %}
-
+{% block extra_nav %}{% endblock %}
 {% block content %}
+
+
 <div class="container">
   <section class="list">
     <h2 class="welcome-message">
-      <i>Hello {% if user.is_authenticated %}{{ user.username }}{% else %}Guest{% endif %}!</i>
+      <i
+        >Hello {% if user.is_authenticated %}{{ user.username }}{% else %}Guest{% endif %}!</i>
     </h2>
 
     <p class="about-text1">
-      Browse books available for swapping in your community.<br>
-      Now you are logged in you can request to swap books from the list below,<br>
-      add a book of your own,<br>
-      or please use the search bar at the bottom of the page, if you have a book or author in mind.<br>
+      Browse books available for swapping in your community.<br />
+      Now you are logged in you can request to swap books from the list
+      below,<br />
+      add a book of your own,<br />
+      or please use the search bar at the bottom of the page, if you have a book
+      or author in mind.<br />
       You can never have too many books!
     </p>
+
+    <nav class="navigation">
+      <a href="{% url 'book_create' %}" class="nav-btn">
+        <i class="fas fa-plus-circle"></i> Add Book
+      </a>
+    </nav>
 
     <h2>Available Books</h2>
     <div class="book-list-container">
       <ul class="book-list">
         {% for book in page_obj %}
         <li class="book-item">
-          <a href="{% url 'book_detail' book.pk %}" class="book-link">
-            <strong>{{ book.title }}</strong> by {{ book.author }}
-          </a>
+          <div class="book-info">
+            <a href="{% url 'book_detail' book.pk %}" class="book-link">
+              <strong class="book-title">{{ book.title }}</strong>
+              <span class="book-author"> by {{ book.author }}</span>
+            </a>
+          </div>
 
           {% if user.is_authenticated and book.owner == user %}
-          <a href="{% url 'book_update' book.pk %}" class="btn edit-btn">
-            <i class="fas fa-edit"></i> Edit
-          </a>
-          <a href="{% url 'book_delete' book.pk %}" class="btn delete-btn">
-            <i class="fas fa-trash-alt"></i> Delete
-          </a>
+          <div class="book-buttons">
+            <a href="{% url 'book_update' book.pk %}" class="book-btn">
+              <i class="fas fa-edit"></i> Edit
+            </a>
+            <a href="{% url 'book_delete' book.pk %}" class="book-btn">
+              <i class="fas fa-trash-alt"></i> Delete
+            </a>
+          </div>
           {% endif %}
         </li>
         {% endfor %}
       </ul>
     </div>
+
+    {% if page_obj.has_other_pages %}
+    <div class="pagination">
+      <span class="step-links">
+        {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; First</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+    {% endif %}
 
     <h3 class="about-title">Would you like to add another book?</h3>
 
@@ -46,16 +82,12 @@
     <nav class="navigation">
       <a href="{% url 'book_create' %}" class="nav-btn">
         <i class="fas fa-plus-circle"></i> Add Book
-      </a>      
+      </a>
     </nav>
 
-    {% if messages %}
-      {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">
-        {{ message }}
-      </div>
-      {% endfor %}
-    {% endif %}
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %} {% endif %}
   </section>
 </div>
 {% endblock %}

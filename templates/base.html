@@ -65,7 +65,10 @@
           {% csrf_token %}
           <button type="submit" class="nav-btn">Logout</button>
         </form>
-        <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
+        {% block extra_nav %}
+        <a href="{% url 'book_search' %}" class="nav-btn">Return to Search</a>
+        {% endblock %}
+
         <a href="{% url 'about' %}" class="nav-btn">About</a>
         {% else %}
         <a href="{% url 'home' %}" class="nav-btn">Home</a>
@@ -99,8 +102,6 @@
         <!-- Main page content -->
         {% block content %}{% endblock %}
       </div>
-
-      
     </main>
 
     <footer>
