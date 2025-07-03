@@ -66,7 +66,7 @@
           <button type="submit" class="nav-btn">Logout</button>
         </form>
         {% block extra_nav %}
-        <a href="{% url 'book_search' %}" class="nav-btn">Return to Search</a>
+        <a href="{% url 'search_books' %}" class="nav-btn">Return to Search</a>
         {% endblock %}
 
         <a href="{% url 'about' %}" class="nav-btn">About</a>
@@ -75,7 +75,13 @@
         <a href="{% url 'about' %}" class="nav-btn">About</a>
         <a href="{% url 'login' %}" class="nav-btn">Login</a>
         <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
-        {% endif %}
+
+        {% if request.resolver_match.url_name != 'home' %}
+  <a href="{% url 'home' %}#search" class="search-icon-link" title="Go to search">
+    <i class="fas fa-search"></i>
+  </a>
+{% endif %}
+ {% endif %}
       </nav>
 
       <!-- User info badge -->
