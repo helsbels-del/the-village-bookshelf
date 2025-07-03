@@ -1,26 +1,9 @@
-{% extends 'base.html' %} {% load static %} {% block title %}Home | The Village
-Bookshelf{% endblock %} {% block content %}
-<div class="container">
-  <section class="list">
-    <h2>Latest Books</h2>
-    <div class="book-list-container">
-      <ul class="book-list">
-        {% for book in latest_books %}
-        <li class="book-item">
-          <a href="{% url 'book_detail' book.pk %}" class="book-link">
-            <strong>{{ book.title }}</strong> by {{ book.author }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-</div>
+{% extends 'base.html' %}
+{% load static %}
 
-<nav class="navigation">
-  <a href="{% url 'all_books' %}" class="nav-btn">View All Books</a>
-</nav>
-{% block hero %}
+{% block title %}Home | The Village Bookshelf{% endblock %}
+
+{% block content %}
 <section class="hero">
   <div class="container">
     <h2>Welcome to The Village Bookshelf</h2>
@@ -33,4 +16,23 @@ Bookshelf{% endblock %} {% block content %}
     </form>
   </div>
 </section>
-{% endblock %} {% endblock %}
+
+<section class="list">
+  <h2>Latest Books</h2>
+  <div class="book-list-container">
+    <ul class="book-list">
+      {% for book in latest_books %}
+      <li class="book-item">
+        <a href="{% url 'book_detail' book.pk %}" class="book-link">
+          <strong>{{ book.title }}</strong> by {{ book.author }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<nav class="navigation">
+  <a href="{% url 'all_books' %}" class="nav-btn">View All Books</a>
+</nav>
+{% endblock %}
