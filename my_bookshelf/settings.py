@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1:8000',
     '127.0.0.1',
     'the-village-bookshelf-96bd2f93fc5e.herokuapp.com',
-    'localhost'
+    'localhost',
     '.herokuapp.com'
 ]
 
@@ -84,15 +84,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'my_bookshelf.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-# }
-# }
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
@@ -105,7 +97,7 @@ CSRF_TRUSTED_ORIGINS = [
 SITE_ID = 1
 
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -160,5 +152,3 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "hsmith675565@gmail.com"
-EMAIL_HOST_PASSWORD = "lhph hqsu xirm dsib"
