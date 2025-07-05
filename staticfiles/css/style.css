@@ -35,6 +35,12 @@ h1 {
   text-decoration: none;
 }
 
+.search-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* Containers for layout */
 
@@ -155,6 +161,13 @@ footer {
   gap: 10px; /* Adds spacing between items */
   justify-content: center;
   margin-top: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .navigation form,
@@ -636,7 +649,7 @@ form {
 
 .logout-message-container {
   position: fixed;
-  top: 80px; /* adjust if you have a taller header */
+  top: 80px; 
   left: 50%;
   transform: translateX(-50%);
   background-color: #dff0d8;
@@ -652,14 +665,6 @@ form {
   max-width: 300px;
 }
 
-/* Optional: Slightly different on larger screens */
-@media screen and (min-width: 768px) {
-  .logout-message-container {
-    top: 100px;
-    font-size: 1rem;
-  }
-}
-
 /* Responsive Media Queries */
 
 @media (max-width: 480px) {
@@ -667,8 +672,29 @@ form {
     line-height: 1.6;
     margin-bottom: 0.75rem;
   }
+
+  .search-icon-btn {
+    display: block;
+    margin: 1rem auto;
+    width: fit-content;
+    font-size: 1.4rem;
+  }
 }
 
+@media (max-width: 500px) {
+  .nav-bar {
+    flex-direction: column;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-icon-wrapper {
+    margin-top: 0.5rem;
+  }
+}
 
 @media (max-width: 600px) {
   .form-details {
@@ -757,7 +783,13 @@ form {
   .about-title {
     font-size: 24px;
   }
+
+  .logout-message-container {
+    top: 100px;
+    font-size: 1rem;
+  }
 }
+
 
 @media (min-width: 1024px) {
   .container {
