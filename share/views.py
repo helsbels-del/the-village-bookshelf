@@ -42,6 +42,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()  # Save the user
             login(request, user)  # ✅ Log them in immediately
+            messages.success(request, f'Account created successfully. Welcome, {user.username}!')
             return redirect('book_list')  # ✅ Redirect to a real URL name
     else:
         form = SignUpForm()
@@ -72,6 +73,9 @@ def search_books(request):
     if query:
         books = Books.objects.filter(title__icontains=query)
         return render(request, 'books/search_results.html', {'books': books, 'query': query})
+    else:
+        return redirect('home')  # or render a template with a message like 'Please enter a search term'
+
    
 
 def book_list(request):
