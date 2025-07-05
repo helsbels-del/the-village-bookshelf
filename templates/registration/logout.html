@@ -4,6 +4,9 @@
 {% block title %}Logout | The Village Bookshelf{% endblock %}
 
 {% block content %}
+<div id="logout-message" class="logout-message-container">
+  <p class="success-message">You have been logged out successfully.</p>
+</div>
 <div class="container">
   <div class="password-reset">
     <h2 class="about-title">You have been logged out</h2>
@@ -14,4 +17,15 @@
     </nav>
   </div>
 </div>
+<script>
+  window.onload = function () {
+    const el = document.getElementById("logout-message");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        el.style.display = "none";
+      }, 3000); // hide after 3 seconds
+    }
+  };
+</script>
 {% endblock %}
