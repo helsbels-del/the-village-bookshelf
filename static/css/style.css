@@ -636,7 +636,7 @@ form {
 
 .logout-message-container {
   position: fixed;
-  top: 80px; /* adjust if you have a taller header */
+  top: 80px; 
   left: 50%;
   transform: translateX(-50%);
   background-color: #dff0d8;
@@ -666,6 +666,13 @@ form {
   .book-info-box p {
     line-height: 1.6;
     margin-bottom: 0.75rem;
+  }
+  
+  .search-icon-btn {
+    display: block;
+    margin: 1rem auto;
+    width: fit-content;
+    font-size: 1.4rem;
   }
 }
 
