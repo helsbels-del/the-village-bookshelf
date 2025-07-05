@@ -621,6 +621,40 @@ form {
 
 /* Responsive Media Queries */
 
+@media (max-width: 480px) {
+  .book-info-box p {
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .form-details {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .form-details form input,
+  .form-details form select,
+  .form-details form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  .form-details textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
 @media (max-width: 767px) {
   .logo-single {
     display: block;
