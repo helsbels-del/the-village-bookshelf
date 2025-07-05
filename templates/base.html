@@ -60,29 +60,35 @@
       </div>
       <!-- Navigation buttons -->
       <nav class="nav-bar">
-        {% if user.is_authenticated %}
-        <form action="{% url 'logout' %}" method="post" style="display: inline">
-          {% csrf_token %}
-          <button type="submit" class="nav-btn">Logout</button>
-        </form>
-        {% block extra_nav %}
-        <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
-        {% endblock %}
-
-        <a href="{% url 'about' %}" class="nav-btn">About</a>
-        {% else %}
-        <a href="{% url 'home' %}" class="nav-btn">Home</a>
-        <a href="{% url 'about' %}" class="nav-btn">About</a>
-        <a href="{% url 'login' %}" class="nav-btn">Login</a>
-        <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
-
+        <div class="nav-buttons">
+          {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post" style="display: inline">
+              {% csrf_token %}
+              <button type="submit" class="nav-btn">Logout</button>
+            </form>
+      
+            {% block extra_nav %}
+              <a href="{% url 'book_list' %}" class="nav-btn">Return to Search</a>
+            {% endblock %}
+            <a href="{% url 'about' %}" class="nav-btn">About</a>
+      
+          {% else %}
+            <a href="{% url 'home' %}" class="nav-btn">Home</a>
+            <a href="{% url 'about' %}" class="nav-btn">About</a>
+            <a href="{% url 'login' %}" class="nav-btn">Login</a>
+            <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
+          {% endif %}
+        </div>
+      
         {% if request.resolver_match.url_name != 'home' %}
-  <a href="{% url 'home' %}#search" class="search-icon-link" title="Go to search">
-    <i class="fas fa-search"></i>
-  </a>
-{% endif %}
- {% endif %}
+          <div class="search-icon-wrapper">
+            <a href="{% url 'home' %}#search" class="search-icon-link" title="Go to search">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+        {% endif %}
       </nav>
+      
 
       <!-- User info badge -->
       <div class="user-info">
