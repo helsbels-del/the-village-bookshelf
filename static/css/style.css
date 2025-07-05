@@ -16,7 +16,7 @@ h1 {
   font-weight: bolder;
 }
 
-hero, h2 {
+.hero h2 {
   text-align: center;
    color: #c7f1c9;
 }
@@ -346,11 +346,6 @@ form {
     text-align: center;
   }
   
-  .form-details {
-    padding: 20px;
-    background-color: #e8fce8;
-    border-radius: 10px;
-  }
   
   /* Form Group Styling */
   .form-group {
