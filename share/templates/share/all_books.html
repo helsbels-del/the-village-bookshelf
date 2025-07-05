@@ -2,25 +2,28 @@
 Village Bookshelf{% endblock %} {% block content %}
 <div class="container">
   <h2 class="section-title">All Available Books</h2>
+  {% if user.is_authenticated %}
+  <p>You’re logged in and can request a swap or add your own book.</p>
+  {% else %}
   <p class="swap-prompt">
     Want to swap or request a book?
     <a href="{% url 'login' %}">Login</a> or
     <a href="{% url 'signup' %}">Sign Up</a>.
   </p>
-
+  {% endif %}
   <div class="book-list-container">
     <ul class="book-list">
       {% for book in page_obj %}
-        <li class="book-item">
-          <div class="book-info">
-            <a href="{% url 'book_detail' book.pk %}" class="book-link">
-              <strong class="book-title">{{ book.title }}</strong>
-              <span class="book-author"> by {{ book.author }}</span>
-            </a>
-          </div>
-        </li>
+      <li class="book-item">
+        <div class="book-info">
+          <a href="{% url 'book_detail' book.pk %}" class="book-link">
+            <strong class="book-title">{{ book.title }}</strong>
+            <span class="book-author"> by {{ book.author }}</span>
+          </a>
+        </div>
+      </li>
       {% empty %}
-        <li>No books found.</li>
+      <li>No books found.</li>
       {% endfor %}
     </ul>
   </div>
@@ -43,6 +46,3 @@ Village Bookshelf{% endblock %} {% block content %}
   </div>
 </div>
 {% endblock %}
-
-
-
