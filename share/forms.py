@@ -1,6 +1,6 @@
 from django import forms
 from .models import Books
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 
@@ -12,7 +12,7 @@ class BookForm(forms.ModelForm):
 
 
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField(required=True)  # Add email field
+    email = forms.EmailField(required=True)  
  
     class Meta:
         model = User
@@ -29,5 +29,28 @@ class SignUpForm(UserCreationForm):
         user.email = self.cleaned_data["email"]
         if commit:
             user.save()
-        return user   
+        return user  
+
+
+class CustomLoginForm(AuthenticationForm):
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={
+            'autocomplete': 'off',
+            'autocorrect': 'off',
+            'autocapitalize': 'none',
+            'spellcheck': 'false',
+            'placeholder': 'Username',
+            'name': 'login-username',  # use a "weird" name
+        })
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={
+            'autocomplete': 'new-password',
+            'placeholder': 'Password',
+            'name': 'login-password',  # use a "weird" name
+        })
+    )
+
+
+
 
