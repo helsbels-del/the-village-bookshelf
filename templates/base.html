@@ -55,7 +55,6 @@
         </a>
       </div>
       <div>
-        <a href="{% url 'home' %}" style="text-decoration: none"></a>
         <h1>The Village Bookshelf</h1>
       </div>
       <!-- Navigation buttons -->
@@ -82,7 +81,7 @@
       
         {% if request.resolver_match.url_name != 'home' %}
           <div class="search-icon-wrapper">
-            <a href="{% url 'home' %}#search" class="search-icon-link" title="Go to search">
+            <a href="{% url 'home' %}#search" class="search-icon-link" title="Go to search" aria-label="Go to search">
               <i class="fas fa-search"></i>
             </a>
           </div>
