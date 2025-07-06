@@ -551,7 +551,7 @@ form {
 .about-text {
   text-align: left;
   line-height: 1.6;
-  padding: 10px 15px;
+  padding: 0px 10px 15px;
   font-size: 16px;
   margin: 0 auto 20px auto;
 }
@@ -696,7 +696,6 @@ form {
   }
 
   .nav-buttons {
-    flex-direction: column;
     align-items: center;
   }
 
