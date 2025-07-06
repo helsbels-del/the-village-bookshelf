@@ -2,26 +2,26 @@
 {% load static %}
 
 {% block title %}Book List | The Village Bookshelf{% endblock %}
+
 {% block extra_nav %}{% endblock %}
+
 {% block content %}
-
-
 <div class="container">
   <section class="list">
+
     <h2 class="welcome-message">
-      <i
-        >Hello {% if user.is_authenticated %}{{ user.username }}{% else %}Guest{% endif %}!</i>
+      <i>Hello {% if user.is_authenticated %}{{ user.username }}{% else %}Guest{% endif %}!</i>
     </h2>
 
-    <p class="about-text1">
-      Browse books available for swapping in your community.<br />
-      Now you are logged in you can request to swap books from the list
-      below,<br />
-      add a book of your own,<br />
-      or please use the search bar at the bottom of the page, if you have a book
-      or author in mind.<br />
-      You can never have too many books!
-    </p>
+    <div class="form-details">
+      <p class="about-text1">
+        Browse books available for swapping in your community.<br />
+        Now you are logged in you can request to swap books from the list below,<br />
+        add a book of your own,<br />
+        or please use the search bar at the bottom of the page, if you have a book or author in mind.<br />
+        You can never have too many books!
+      </p>
+    </div>
 
     <nav class="navigation">
       <a href="{% url 'book_create' %}" class="nav-btn">
@@ -35,10 +35,10 @@
         {% for book in page_obj %}
         <li class="book-item">
           <div class="book-info">
-            <a href="{% url 'book_detail' book.pk %}" class="book-link">
+            <a href="{% url 'book_detail' book.pk %}" class="book-title-link">
               <strong class="book-title">{{ book.title }}</strong>
-              <span class="book-author"> by {{ book.author }}</span>
             </a>
+            <span class="book-author"> by {{ book.author }}</span>
           </div>
 
           {% if user.is_authenticated and book.owner == user %}
@@ -60,8 +60,8 @@
     <div class="pagination">
       <span class="step-links">
         {% if page_obj.has_previous %}
-        <a href="?page=1">&laquo; First</a>
-        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+          <a href="?page=1">&laquo; First</a>
+          <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
         {% endif %}
 
         <span class="current">
@@ -69,8 +69,8 @@
         </span>
 
         {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+          <a href="?page={{ page_obj.next_page_number }}">Next</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
         {% endif %}
       </span>
     </div>
@@ -78,14 +78,12 @@
 
     <h3 class="about-title">Would you like to add another book?</h3>
 
-    <!-- Add Book Navigation section -->
     <nav class="navigation">
       <a href="{% url 'book_create' %}" class="nav-btn">
         <i class="fas fa-plus-circle"></i> Add Book
       </a>
     </nav>
 
-    
   </section>
 </div>
 {% endblock %}

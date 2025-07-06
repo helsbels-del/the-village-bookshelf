@@ -9,6 +9,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.mail import send_mail
+from django.db.models import Q 
 
 
 # Create your views here.
@@ -71,11 +72,13 @@ def login_view(request):
 def search_books(request):
     query = request.GET.get('q', '').strip()
     if query:
-        books = Books.objects.filter(title__icontains=query)
+        books = Books.objects.filter(
+            Q(title__icontains=query) | Q(author__icontains=query)
+        )
         return render(request, 'books/search_results.html', {'books': books, 'query': query})
     else:
-        return redirect('home')  # or render a template with a message like 'Please enter a search term'
-
+        messages.warning(request, "Please enter a search term.")
+        return redirect('home')
    
 
 def book_list(request):
