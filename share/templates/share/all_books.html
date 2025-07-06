@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block title %}All Books | The
 Village Bookshelf{% endblock %} {% block content %}
 <div class="container">
-  <h2 class="section-title">All Available Books</h2>
+  <h2 class="home-title">All Available Books</h2>
   {% if user.is_authenticated %}
   <p>You’re logged in and can request a swap or add your own book.</p>
   {% else %}
