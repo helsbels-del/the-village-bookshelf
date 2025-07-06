@@ -79,8 +79,9 @@ def search_books(request):
     else:
         messages.warning(request, "Please enter a search term.")
         return redirect('home')
-   
-
+    
+     
+@login_required
 def book_list(request):
     books = Books.objects.all().order_by('title')
     paginator = Paginator(books, 10)
