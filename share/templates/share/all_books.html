@@ -7,8 +7,8 @@ Village Bookshelf{% endblock %} {% block content %}
   {% else %}
   <p class="swap-prompt">
     Want to swap or request a book?
-    <a href="{% url 'login' %}">Login</a> or
-    <a href="{% url 'signup' %}">Sign Up</a>.
+    <a href="{% url 'login' %}" class="text-link">Login</a> or
+    <a href="{% url 'signup' %}" class="text-link">Sign Up</a>.
   </p>
   {% endif %}
   <div class="book-list-container">
@@ -29,20 +29,24 @@ Village Bookshelf{% endblock %} {% block content %}
   </div>
 
   <!-- Pagination controls -->
-  <div class="pagination">
-    {% if page_obj.has_previous %}
-    <a href="?page=1">&laquo; First</a>
-    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-    {% endif %}
+  {% if page_obj.has_other_pages %}
+    <div class="pagination">
+      <span class="page-number-display">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+      </span>
+      <span class="step-links">
+        {% if page_obj.has_previous %}
+          <a href="?page=1" class="text-link">&laquo; First</a>
+          <a href="?page={{ page_obj.previous_page_number }}" class="text-link">Previous</a> 
+        {% endif %}
 
-    <span class="current"
-      >Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span
-    >
-
-    {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">Next</a>
-    <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class="text-link">Next</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}" class="text-link">Last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
     {% endif %}
   </div>
+  {% endblock %}
 </div>
-{% endblock %}
