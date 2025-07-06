@@ -246,8 +246,7 @@ form {
 .password-reset {
   max-width: 90%;
   width: 400px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 20px auto;
   background-color: #c7f1c9;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -551,10 +550,10 @@ form {
 
 .about-text {
   text-align: left;
-  line-height: 1.5;
+  line-height: 1.6;
   padding: 10px 15px;
   font-size: 16px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 
 /* Messages */
@@ -703,6 +702,15 @@ form {
 
   .search-icon-wrapper {
     margin-top: 0.5rem;
+  }
+
+  .form-details {
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .about-text {
+    font-size: 15px;
   }
 }
 
