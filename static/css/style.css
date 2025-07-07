@@ -19,7 +19,7 @@ h1 {
   font-weight: bolder;
 }
 
-hero.h2 {
+.hero, h2 {
   text-align: center;
   color: #c7f1c9;
 }
