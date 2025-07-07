@@ -19,13 +19,13 @@ h1 {
   font-weight: bolder;
 }
 
-.hero.h2 {
-  text-align: center;
-  color: #c7f1c9;
-}
-
 h2 {
   color:darkgreen;
+}
+
+.hero h2 {
+  text-align: center;
+  color: #c7f1c9;
 }
 
 .search-icon-link {
