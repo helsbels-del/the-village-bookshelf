@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block title %}Home | The Village
 Bookshelf{% endblock %} {% block content %}
 <div class="container">
+
   <section class="hero">
     <h2>Welcome to The Village Bookshelf</h2>
     <p>Share, discover, and borrow books from your local community.</p>
@@ -10,28 +11,29 @@ Bookshelf{% endblock %} {% block content %}
       <button type="submit">Search</button>
     </form>
   </section>
+
+  <section class="list">
+    <h2 class="book-list-title">Latest Books Added</h2>
+
+    <div class="book-list-container">
+      <ul class="book-list">
+        {% for book in latest_books %}
+        <li class="book-item">
+          <div class="book-info">
+            <a href="{% url 'book_detail' book.pk %}" class="book-title-link">
+              <strong class="book-title">{{ book.title }}</strong>
+            </a>
+            <span class="book-author"> by {{ book.author }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <nav class="navigation">
+    <a href="{% url 'all_books' %}" class="nav-btn">View All Books</a>
+  </nav>
+
 </div>
-
-<section class="list">
-  <h2 class="book-list-title">Latest Books Added</h2>
-
-  <div class="book-list-container">
-    <ul class="book-list">
-      {% for book in latest_books %}
-      <li class="book-item">
-        <div class="book-info">
-          <a href="{% url 'book_detail' book.pk %}" class="book-title-link">
-            <strong class="book-title">{{ book.title }}</strong>
-          </a>
-          <span class="book-author"> by {{ book.author }}</span>
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-
-<nav class="navigation">
-  <a href="{% url 'all_books' %}" class="nav-btn">View All Books</a>
-</nav>
 {% endblock %}
