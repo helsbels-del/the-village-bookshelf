@@ -873,29 +873,25 @@ a.text-link {
   }
 }
 
-/* @media (min-width: 2560px) {
-  .container {
-    max-width: 1600px;
+@media (min-width: 2560px) {
+  .container,
+  .hero,
+  .book-list-container {
+    max-width: 85%;
+    margin: 0 auto;
   }
 
   .about-text {
-    max-width: 1100px;
-    font-size: 20px;
+    max-width: 75%;
+    font-size: 1.25rem;
   }
 
   .about-title {
-    font-size: 42px;
+    font-size: 2.25rem;
   }
 
   .welcome-message {
-    font-size: 48px;
+    font-size: 2.5rem;
   }
-  .hero {
-    max-width: 1500px;
-  }
+}
 
-  .book-list-container {
-    max-width: 1500px;
-  }
-
-} */
