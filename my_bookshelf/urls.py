@@ -22,8 +22,17 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # admin page
-    path('share', my_share, name='share'),  # custom share view
-    path('', include("share.urls"), name="share-urls"), # includes share urls.
-    path('accounts/', include('django.contrib.auth.urls')),  # Built-in auth URLs
-    path('accounts/logout-success/', TemplateView.as_view(template_name="registration/logout.html"), name='logout_success'),  # Custom logout success page
+    path('share/', my_share, name='share'),  # custom share view
+    path('', include("share.urls"), name="share-urls"),  # includes share urls.
+    path(
+        'accounts/',
+        include('django.contrib.auth.urls')
+    ),  # Built-in auth URLs
+    path(
+        'accounts/logout-success/',
+        TemplateView.as_view(
+            template_name='registration/logout.html'
+        ),
+        name='logout_success'
+    ),  # Custom logout success page
 ]
