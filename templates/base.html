@@ -124,13 +124,13 @@
     <script>
       // Automatically fade out and remove messages after 4 seconds
       setTimeout(function () {
-        const messages = document.querySelectorAll('.message');
-        messages.forEach(function (msg) {
-          msg.style.transition = 'opacity 0.5s ease';
-          msg.style.opacity = '0';
-          setTimeout(() => msg.remove(), 500); // Remove after fade
-        });
-      }, 4000);
+    const messages = document.querySelectorAll('.message.success, .message.info');
+    messages.forEach(function (msg) {
+      msg.style.transition = 'opacity 0.5s ease';
+      msg.style.opacity = '0';
+      setTimeout(() => msg.remove(), 500);
+    });
+  }, 4000);
     </script>
   </body>
 </html>
