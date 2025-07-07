@@ -443,6 +443,11 @@ a.text-link {
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
+.logout-btn {
+  background-color: darkgreen;
+  color: #f0f0f0;
+}
+
 /* Error Box */
 .form-errors {
   background: #f8d7da;
