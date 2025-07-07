@@ -47,9 +47,7 @@ h3 {
 
 /* Containers for layout */
 
-.container,
-.hero,
-.book-list-container {
+.container {
   width: 100%;
   max-width: 1200px;  /* or 1400px depending on your content */
   margin: 0 auto;
