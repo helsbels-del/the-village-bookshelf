@@ -1,9 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}Home | The Village Bookshelf{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}Home | The Village
+Bookshelf{% endblock %} {% block content %}
 <section class="hero">
   <div class="container">
     <h2>Welcome to The Village Bookshelf</h2>
@@ -18,14 +14,18 @@
 </section>
 
 <section class="list">
-  <h2 class="home-title">Latest Books</h2>
+  <h2 class="book-list-title">Latest Books Added</h2>
+
   <div class="book-list-container">
     <ul class="book-list">
       {% for book in latest_books %}
       <li class="book-item">
-        <a href="{% url 'book_detail' book.pk %}" class="book-link">
-          <strong>{{ book.title }}</strong> by {{ book.author }}
-        </a>
+        <div class="book-info">
+          <a href="{% url 'book_detail' book.pk %}" class="book-title-link">
+            <strong class="book-title">{{ book.title }}</strong>
+          </a>
+          <span class="book-author"> by {{ book.author }}</span>
+        </div>
       </li>
       {% endfor %}
     </ul>
