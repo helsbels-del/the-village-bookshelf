@@ -1,7 +1,7 @@
 /* Base styling */
-main {
-  min-height: calc(100vh - 150px); /* adjust for header/footer */
-}
+/* main {
+  min-height: calc(100vh - 150px); /* adjust for header/footer 
+} */
 
 body {
   font-family: Arial, sans-serif;
