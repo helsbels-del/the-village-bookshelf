@@ -48,10 +48,11 @@ h3 {
 /* Containers for layout */
 
 .container {
-  width: 100%;
-  max-width: 900px;
+  width: 90%;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 
@@ -112,18 +113,22 @@ footer {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  /* Blend a transparent black overlay with the image */
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity (0.1 - 1) */
-  background-blend-mode: darken; /* Other options: multiply, overlay, etc. */
-  padding: 20px 10px;
-  max-width: 1100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  padding: 20px;
   margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  box-sizing: border-box;
 }
 
 .hero-content {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .hero p {
@@ -135,7 +140,6 @@ footer {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -148,6 +152,7 @@ footer {
   padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .hero button {
@@ -255,14 +260,15 @@ form {
 .auth-form,
 .form-wrapper,
 .password-reset {
-  max-width: 90%;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   margin: 20px auto;
+  padding: 20px;
   background-color: #c7f1c9;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: #111;
+  box-sizing: border-box;
 }
 
 .form-errors {
@@ -284,7 +290,7 @@ form {
 
 .form-group input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -324,11 +330,23 @@ form {
   font-size: 0.85rem;
 }
 
-.signup-form button[type="submit"] {
+form button[type="submit"],
+.signup-form button {
   width: 100%;
   max-width: 300px;
   margin-top: 20px;
+  padding: 12px;
   font-size: 16px;
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover,
+.signup-form button:hover {
+  background-color: #0056b3;
 }
 
 .form-nav {
