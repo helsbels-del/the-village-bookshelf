@@ -864,6 +864,13 @@ a.text-link {
   .about-title {
     font-size: 32px;
   }
+  .hero {
+    max-width: 1300px;
+  }
+
+  .book-list-container {
+    max-width: 1300px;
+  }
 }
 
 @media (min-width: 2560px) {
@@ -883,4 +890,12 @@ a.text-link {
   .welcome-message {
     font-size: 48px;
   }
+  .hero {
+    max-width: 1500px;
+  }
+
+  .book-list-container {
+    max-width: 1500px;
+  }
+
 }
