@@ -113,7 +113,6 @@
         {% endif %}
 
         <!-- Main page content -->
-        {% block breadcrumbs %}{% endblock %}
         {% block content %}{% endblock %}
       </div>
     </main>
@@ -121,5 +120,20 @@
     <footer>
       <p>&copy; 2025 The Village Bookshelf. All rights reserved.</p>
     </footer>
+
+    <script>
+      // Automatically fade out and remove messages after 4 seconds
+      setTimeout(function () {
+        const messages = document.querySelectorAll('.message');
+        messages.forEach(function (msg) {
+          msg.style.transition = 'opacity 0.5s ease';
+          msg.style.opacity = '0';
+          setTimeout(() => msg.remove(), 500); // Remove after fade
+        });
+      }, 4000);
+    </script>
+  </body>
+</html>
+
   </body>
 </html>
