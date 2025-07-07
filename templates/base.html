@@ -68,15 +68,17 @@
             </form>
       
             {% block extra_nav %}
-              <a href="{% url 'book_list' %}" class="nav-btn">Back to Booklist</a>
+              <a href="{% url 'book_list' %}" class="nav-btn {% if request.path == '/book_list/' %}active{% endif %}">Back to Booklist</a>
             {% endblock %}
-            <a href="{% url 'about' %}" class="nav-btn">About</a>
+            <a href="{% url 'about' %}" class="nav-btn {% if request.path == '/book_list/' %}active{% endif %}">About</a>
       
           {% else %}
-            <a href="{% url 'home' %}" class="nav-btn">Home</a>
-            <a href="{% url 'about' %}" class="nav-btn">About</a>
-            <a href="{% url 'login' %}" class="nav-btn">Login</a>
-            <a href="{% url 'signup' %}" class="nav-btn">Sign Up</a>
+            <a href="{% url 'home' %}" class="nav-btn {% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="{% url 'about' %}" class="nav-btn {% if request.path == '/about/' %}active{% endif %}">About</a>
+            <a href="{% url 'login' %}" class="nav-btn {% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+              Login
+            </a>            
+            <a href="{% url 'signup' %}" class="nav-btn {% if request.path == '/signup/' %}active{% endif %}">Sign Up</a>
           {% endif %}
         </div>
       
