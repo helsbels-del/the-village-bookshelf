@@ -119,31 +119,6 @@ footer {
   margin: 0 auto;
 }
 
-.hero.home-hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px 20px;
-  min-height: 60vh; /* Ensures it fills space nicely */
-}
-
-.hero-content {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05); /* optional soft background */
-  border-radius: 10px; /* optional rounded corners */
-}
-
-.book-list-container {
-  max-width: 1000px;
-  width: 90%;
-  margin: 30px auto;
-}
-
-
 .hero-content {
   max-width: 1200px;
   width: 100%;
