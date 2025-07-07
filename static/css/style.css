@@ -875,9 +875,7 @@ a.text-link {
 }
 
 @media (min-width: 2000px) {
-  .container,
-  .hero,
-  .book-list-container {
+  .container {
     max-width: 1400px;
   }
 }
