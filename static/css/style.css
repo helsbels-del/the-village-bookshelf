@@ -873,7 +873,7 @@ a.text-link {
   }
 }
 
-@media (min-width: 2560px) {
+/* @media (min-width: 2560px) {
   .container {
     max-width: 1600px;
   }
@@ -898,4 +898,4 @@ a.text-link {
     max-width: 1500px;
   }
 
-}
+} */
