@@ -22,104 +22,106 @@
   </head>
 
   <body>
-    <header>
-      <!-- Mobile logo -->
-      <div class="logo-single">
-        <a href="{% url 'home' %}">
-          <img
-            src="{% static 'images/books-small.png' %}"
-            alt="The Village Bookshelf logo"
-          >
-        </a>
-      </div>
+    <div class="site-wrapper">
+      <header>
+        <!-- Mobile logo -->
+        <div class="logo-single">
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'images/books-small.png' %}"
+              alt="The Village Bookshelf logo"
+            >
+          </a>
+        </div>
 
-      <!-- Desktop triple logo -->
-      <div class="logo-triple">
-        <a href="{% url 'home' %}">
-          <img
-            src="{% static 'images/books-small.png' %}"
-            alt="The Village Bookshelf logo"
-          >
-        </a>
-        <a href="{% url 'home' %}">
-          <img
-            src="{% static 'images/books-small.png' %}"
-            alt="The Village Bookshelf logo"
-          >
-        </a>
-        <a href="{% url 'home' %}">
-          <img
-            src="{% static 'images/books-small.png' %}"
-            alt="The Village Bookshelf logo"
-          >
-        </a>
-      </div>
-      <div>
-        <h1>The Village Bookshelf</h1>
-      </div>
-      <!-- Navigation buttons -->
-      <nav class="nav-bar">
-        <div class="nav-buttons">
+        <!-- Desktop triple logo -->
+        <div class="logo-triple">
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'images/books-small.png' %}"
+              alt="The Village Bookshelf logo"
+            >
+          </a>
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'images/books-small.png' %}"
+              alt="The Village Bookshelf logo"
+            >
+          </a>
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'images/books-small.png' %}"
+              alt="The Village Bookshelf logo"
+            >
+          </a>
+        </div>
+        <div>
+          <h1>The Village Bookshelf</h1>
+        </div>
+        <!-- Navigation buttons -->
+        <nav class="nav-bar">
+          <div class="nav-buttons">
+            {% if user.is_authenticated %}
+              <form action="{% url 'logout' %}" method="post" style="display: inline">
+                {% csrf_token %}
+                <button type="submit" class="nav-btn">Logout</button>
+              </form>
+        
+              {% block extra_nav %}
+                <a href="{% url 'book_list' %}" class="nav-btn {% if request.resolver_match.url_name == 'book_list' %}active{% endif %}">Back to Booklist</a>
+              {% endblock %}
+              <a href="{% url 'about' %}" class="nav-btn {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+        
+            {% else %}
+              <a href="{% url 'home' %}" class="nav-btn {% if request.path == '/' %}active{% endif %}">Home</a>
+              <a href="{% url 'about' %}" class="nav-btn {% if request.path == '/about/' %}active{% endif %}">About</a>
+              <a href="{% url 'login' %}" class="nav-btn {% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+                Login
+              </a>            
+              <a href="{% url 'signup' %}" class="nav-btn {% if request.path == '/signup/' %}active{% endif %}">Sign Up</a>
+            {% endif %}
+          </div>
+        
+          {% if request.resolver_match.url_name != 'home' %}
+            <div class="search-icon-wrapper">
+              <a href="{% url 'home' %}#search" class="search-icon-link" title="Go to search" aria-label="Go to search">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          {% endif %}
+        </nav>
+        
+
+        <!-- User info badge -->
+        <div class="user-info">
           {% if user.is_authenticated %}
-            <form action="{% url 'logout' %}" method="post" style="display: inline">
-              {% csrf_token %}
-              <button type="submit" class="nav-btn">Logout</button>
-            </form>
-      
-            {% block extra_nav %}
-              <a href="{% url 'book_list' %}" class="nav-btn {% if request.path == '/book_list/' %}active{% endif %}">Back to Booklist</a>
-            {% endblock %}
-            <a href="{% url 'about' %}" class="nav-btn {% if request.path == '/book_list/' %}active{% endif %}">About</a>
-      
+          <p><i class="fas fa-user"></i> {{ user.username }}</p>
           {% else %}
-            <a href="{% url 'home' %}" class="nav-btn {% if request.path == '/' %}active{% endif %}">Home</a>
-            <a href="{% url 'about' %}" class="nav-btn {% if request.path == '/about/' %}active{% endif %}">About</a>
-            <a href="{% url 'login' %}" class="nav-btn {% if request.resolver_match.url_name == 'login' %}active{% endif %}">
-              Login
-            </a>            
-            <a href="{% url 'signup' %}" class="nav-btn {% if request.path == '/signup/' %}active{% endif %}">Sign Up</a>
+          <p><i class="fas fa-sign-in-alt"></i> Guest</p>
           {% endif %}
         </div>
-      
-        {% if request.resolver_match.url_name != 'home' %}
-          <div class="search-icon-wrapper">
-            <a href="{% url 'home' %}#search" class="search-icon-link" title="Go to search" aria-label="Go to search">
-              <i class="fas fa-search"></i>
-            </a>
+      </header>
+
+      <main>
+        <div>
+          <!-- Optional flash messages -->
+          {% if messages %}
+          <div class="message-box">
+            {% for message in messages %}
+            <div class="message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
           </div>
-        {% endif %}
-      </nav>
-      
+          {% endif %}
 
-      <!-- User info badge -->
-      <div class="user-info">
-        {% if user.is_authenticated %}
-        <p><i class="fas fa-user"></i> {{ user.username }}</p>
-        {% else %}
-        <p><i class="fas fa-sign-in-alt"></i> Guest</p>
-        {% endif %}
-      </div>
-    </header>
-
-    <main>
-      <div>
-        <!-- Optional flash messages -->
-        {% if messages %}
-        <div class="message-box">
-          {% for message in messages %}
-          <div class="message {{ message.tags }}">{{ message }}</div>
-          {% endfor %}
+          <!-- Main page content -->
+          {% block content %}{% endblock %}
         </div>
-        {% endif %}
+      </main>
 
-        <!-- Main page content -->
-        {% block content %}{% endblock %}
-      </div>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 The Village Bookshelf. All rights reserved.</p>
-    </footer>
+      <footer>
+        <p>&copy; 2025 The Village Bookshelf. All rights reserved.</p>
+      </footer>
+    </div>
 
     <script>
       // Automatically fade out and remove messages after 4 seconds
