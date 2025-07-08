@@ -800,7 +800,7 @@ nav-btn:hover,
 
 /* Responsive Media Queries */
 
-@media (min-width: 426px) {
+@media (min-width: 419px) {
   .nav-buttons {
     flex-wrap: nowrap;
     justify-content: center;
@@ -828,6 +828,7 @@ nav-btn:hover,
 
   .nav-buttons {
     align-items: center;
+    
   }
 
   .search-icon-wrapper {
