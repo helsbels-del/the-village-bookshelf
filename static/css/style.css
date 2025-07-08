@@ -871,7 +871,7 @@ nav-btn:hover,
 }
 
 
-@media (max-width: 609px) {
+@media (max-width: 640px) {
   .logo-single {
     display: block;
   }
