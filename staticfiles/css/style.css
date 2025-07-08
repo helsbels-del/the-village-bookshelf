@@ -800,13 +800,6 @@ nav-btn:hover,
 
 /* Responsive Media Queries */
 
-@media (min-width: 426px) {
-  .nav-buttons {
-    flex-wrap: nowrap;
-    justify-content: center;
-  }
-}
-
 @media (max-width: 480px) {
   .book-info-box p {
     line-height: 1.6;
@@ -828,6 +821,7 @@ nav-btn:hover,
 
   .nav-buttons {
     align-items: center;
+    
   }
 
   .search-icon-wrapper {
