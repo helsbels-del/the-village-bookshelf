@@ -4,13 +4,13 @@
 {% block title %}Search Results | The Village Bookshelf{% endblock %}
 
 {% block content %}
-<div class="container">
-  <h2 class="about-title">Search Results for "{{ query }}"</h2>
+<div class="container form-details">
+  <h2 class="search-results-heading">Search Results for "{{ query }}"</h2>
 
   {% if books %}
-    <p>{{ books|length }} result{{ books|length|pluralize }} found.</p>
+    <p class="search-results-info">{{ books|length }} result{{ books|length|pluralize }} found.</p>
 
-    <ul class="search-list">
+    <ul class="search-results-list">
       {% for book in books %}
         <li class="results">
           <a href="{% url 'book_detail' book.pk %}">
@@ -25,9 +25,9 @@
 
   <nav class="navigation">
     {% if user.is_authenticated %}
-      <a href="{% url 'book_list' %}" class="nav-btn">← Back to Book List</a>
+      <a href="{% url 'book_list' %}" class="nav-btn logout-btn">← Back to Book List</a>
     {% else %}
-      <a href="{% url 'home' %}" class="nav-btn">← Back to Home</a>
+      <a href="{% url 'home' %}" class="nav-btn logout-btn">← Back to Home</a>
     {% endif %}
   </nav>
 </div>
