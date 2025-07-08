@@ -1,7 +1,7 @@
 /* Base styling */
-/* main {
-  min-height: calc(100vh - 150px); /* adjust for header/footer 
-} */
+main {
+  min-height: calc(100vh - 150px); /* ensures footer sticks to bottom on short pages */
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -46,6 +46,46 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Search results */
+
+.search-results-heading {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #034d1f;
+  text-align: center;
+}
+
+.search-results-info {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #034d1f;
+}
+
+.search-results-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.search-results-list a,
+.results a {
+  color: #1b1b8a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.search-results-list a:hover,
+.results a:hover {
+  text-decoration: underline;
+}
+
+.search-results-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
 }
 
 /* Containers for layout */
