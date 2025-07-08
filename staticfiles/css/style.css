@@ -864,6 +864,12 @@ nav-btn:hover,
   }
 }
 
+@media (max-width: 449px){
+  .welcome-message,
+  h1 {
+    font-size: 26px;
+  }
+}
 
 
 @media (max-width: 602px) {
@@ -889,7 +895,7 @@ nav-btn:hover,
 
   .welcome-message,
   h1 {
-    font-size: 26px;
+    font-size: 52px;
   }
 
   footer {
