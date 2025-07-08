@@ -15,7 +15,11 @@
           {% csrf_token %}
           <button type="submit" class="nav-btn"><i class="fas fa-trash-alt"></i> Yes, delete</button>
         </form>
-        <a href="{% url 'book_list' %}" class="nav-btn logout-btn"><i class="fas fa-times"></i> Cancel</a>
+        <form method="get" action="{% url 'book_list' %}">
+          <button type="submit" class="nav-btn logout-btn">
+            <i class="fas fa-times"></i> Cancel
+          </button>
+        </form>
       </div>
     </div>
   </section>
