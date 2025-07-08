@@ -24,8 +24,8 @@
             </form>
           {% else %}
             <p><i>This is your book.</i></p>
-            <a href="{% url 'book_update' book.pk %}" class="nav-btn"><i class="fas fa-edit"></i> Edit</a>
-            <a href="{% url 'book_delete' book.pk %}" class="nav-btn"><i class="fas fa-trash-alt"></i> Delete</a>
+            <a href="{% url 'book_update' book.pk %}" class="nav-btn logout-btn"><i class="fas fa-edit"></i> Edit</a>
+            <a href="{% url 'book_delete' book.pk %}" class="nav-btn logout-btn"><i class="fas fa-trash-alt"></i> Delete</a>
           {% endif %}
           <a href="{% url 'book_list' %}" class="nav-btn logout-btn">Back to Book List</a>
         {% else %}
