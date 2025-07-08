@@ -864,7 +864,9 @@ nav-btn:hover,
   }
 }
 
-@media (max-width: 767px) {
+
+
+@media (max-width: 602px) {
   .logo-single {
     display: block;
   }
@@ -872,6 +874,9 @@ nav-btn:hover,
   .logo-triple {
     display: none;
   }
+}
+
+  @media (max-width: 767px) {
 
   .navigation {
     flex-direction: column;
