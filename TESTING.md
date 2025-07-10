@@ -24,8 +24,8 @@ This file documents all manual testing and validation performed for **The Villag
 
 ## Test Environment
 
-- **Browser(s):** Chrome, Firefox, Safari, Edge
-- **Devices tested:** Desktop (2560x1440, 1440x900), Tablet (768px), Mobile (425px, 375px, 320px)
+- **Browser(s):** Chrome, Firefox, Edge
+- **Devices tested:** Desktop (2560, 1440, 1024), Tablet (768px), Mobile (425px, 375px, 320px)
 - **Tools used:**
   - [W3C HTML Validator](https://validator.w3.org/)
   - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
@@ -40,22 +40,38 @@ This file documents all manual testing and validation performed for **The Villag
 | Sign Up Form   | Submit with valid inputs                    | User created, redirected to book list         | ✅ Passed            | ✅         |
 | Login          | Correct username/password                   | Redirected to book list                       | ✅ Passed            | ✅         |
 | Login          | Incorrect credentials                       | Error message shown                           | ✅ Passed            | ✅         |
+ ![incorrect details](/static/images/incorrect-details-message.png)
 | Add Book       | Valid input                                 | Book saved and appears in book list           | ✅ Passed            | ✅         |
+![book details saved](/static/images/book-details-saved.png)
 | Edit Book      | Change details and save                     | Book updated                                  | ✅ Passed            | ✅         |
+
 | Delete Book    | Confirm deletion                            | Book removed from database                    | ✅ Passed            | ✅         |
+![confirm deletion](/static/images/confirm-deletion.png)
+
 | Request Swap   | Click on a book you don’t own               | Email sent to owner, message displayed        | ✅ Passed            | ✅         |
+![confirm deletion](/static/images/swaprequest-success-message.png)
 | Swap Request Again | Click on already requested book        | Message shown: “already requested”            | ✅ Passed            | ✅         |
+![confimr deletion](/static/images/already-requested.png)
 | Logout         | Click logout                               | Redirected to logged-out page                 | ✅ Passed            | ✅         |
+![confimr deletion](/static/images/logout-message.png)
+![confimr deletion](/static/images/logged-out.png)
+
 
 ---
 
 ## User Journey Testing
 
-| Journey                                    | Outcome                                      | Notes         |
-|--------------------------------------------|----------------------------------------------|---------------|
-| Sign up → Add Book → Logout → Login again  | Book remains, user session handled correctly | ✅            |
-| Visit book details as guest                | Can view book, cannot request swap           | ✅            |
-| Try accessing `/add/` when not logged in   | Redirects to login page                      | ✅            |
+| Journey                                                                 | Outcome                                      | Notes                                                       |
+|-------------------------------------------------------------------------|----------------------------------------------|-------------------------------------------------------------|
+| Sign up → Add Book → Logout → Login again                              | Book remains, user session handled correctly | ✅                                                          |
+| Visit book details as guest                                             | Can view book, cannot request swap           | ✅                                                          |
+| Try accessing `/add/` when not logged in                                | Redirects to login page                      | ✅                                                          |
+| Forgot password → Submit email → Receive reset link (manual check)     | Password reset email received (if configured) | If not configured, manual check of backend / logs accepted |
+| Reset password → Enter new password → Login with new password          | Redirected to login → New password works     | ✅                                                          |
+| Visit `/edit/` for a book not owned by the user                         | Redirects or shows "not authorized" message  | Confirms ownership logic enforced                          |
+| Try to request swap on own book                                         | Swap button not visible                      | Logic enforced in template                                 |
+| Submit Add Book with empty fields                                       | Error messages shown                         | Confirms form validation                                   |
+| Submit Login with only username (no password)        
 
 ---
 
