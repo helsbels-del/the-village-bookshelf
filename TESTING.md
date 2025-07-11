@@ -1,5 +1,7 @@
 # Manual Testing & Validation Results – *The Village Bookshelf*
 
+- [README.md](README.md) file.
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -274,3 +276,5 @@ Screenshots for all responsive breakpoints, features, and validation results are
 - Admin
 
 ![admin PEP8 results](/static/images/pep8-admin.py.png)
+
+All tests were completed manually, and the application behaved as expected under all tested conditions.
