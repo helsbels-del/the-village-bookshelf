@@ -35,17 +35,17 @@ This file documents all manual testing and validation performed for **The Villag
 
 ## Manual Feature Testing
 
-| Feature        | Test Case                                  | Expected Result                              | Actual Result       | Pass/Fail |
-|----------------|---------------------------------------------|-----------------------------------------------|----------------------|------------|
-| Sign Up Form   | Submit with valid inputs                    | User created, redirected to book list         | ✅ Passed            | ✅         |
-| Login          | Correct username/password                   | Redirected to book list                       | ✅ Passed            | ✅         |
-| Login          | Incorrect credentials                       | Error message shown                           | ✅ Passed            | ✅         | 
-| Add Book       | Valid input                                 | Book saved and appears in book list           | ✅ Passed            | ✅         |
-| Edit Book      | Change details and save                     | Book updated                                  | ✅ Passed            | ✅         |
-| Delete Book    | Confirm deletion                            | Book removed from database                    | ✅ Passed            | ✅         |
-| Request Swap   | Click on a book you don’t own               | Email sent to owner, message displayed        | ✅ Passed            | ✅         |
-| Swap Request Again | Click on already requested book        | Message shown: “already requested”            | ✅ Passed            | ✅         |
-| Logout         | Click logout                               | Redirected to logged-out page                 | ✅ Passed            | ✅         |
+| Feature        | Test Case                                  | Expected Result                              | Actual Result       | 
+|----------------|---------------------------------------------|-----------------------------------------------|----------------------|
+| Sign Up Form   | Submit with valid inputs                    | User created, redirected to book list         | ✅ Passed            | 
+| Login          | Correct username/password                   | Redirected to book list                       | ✅ Passed            | 
+| Login          | Incorrect credentials                       | Error message shown                           | ✅ Passed            | 
+| Add Book       | Valid input                                 | Book saved and appears in book list           | ✅ Passed            | 
+| Edit Book      | Change details and save                     | Book updated                                  | ✅ Passed            | 
+| Delete Book    | Confirm deletion                            | Book removed from database                    | ✅ Passed            | 
+| Request Swap   | Click on a book you don’t own               | Email sent to owner, message displayed        | ✅ Passed            | 
+| Swap Request Again | Click on already requested book        | Message shown: “already requested”            | ✅ Passed            | 
+| Logout         | Click logout                               | Redirected to logged-out page                 | ✅ Passed            | 
 
 ---
 
@@ -61,7 +61,8 @@ This file documents all manual testing and validation performed for **The Villag
 | Visit `/edit/` for a book not owned by the user                         | Redirects or shows "not authorized" message  | Confirms ownership logic enforced                          |
 | Try to request swap on own book                                         | Swap button not visible                      | Logic enforced in template                                 |
 | Submit Add Book with empty fields                                       | Error messages shown                         | Confirms form validation                                   |
-| Submit Login with only username (no password)        
+| Submit Login with only username (no password)                           | Error shown                                  | ✅                                                         |
+
 
 ---
 
@@ -91,10 +92,7 @@ This file documents all manual testing and validation performed for **The Villag
 
 All major pages were tested using the W3C [HTML Validator](https://validator.w3.org/). Minor fixes such as unclosed tags and incorrect nesting were corrected.
 
-- ✅ **Home Page:** Passed  
-- ✅ **Login/Signup Pages:** Passed  
-- ✅ **About Page:** Passed  
-- ✅ **Book Detail / Add Book / Edit Book:** Passed  
+- see screenshots below for results. All pages passed. 
 
 ---
 
@@ -102,7 +100,7 @@ All major pages were tested using the W3C [HTML Validator](https://validator.w3.
 
 The full `style.css` file was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 
-- ✅ No errors or warnings detected.
+- No errors or warnings detected. See screenshots below.
 
 ---
 
@@ -110,8 +108,8 @@ The full `style.css` file was tested using [W3C CSS Validator](https://jigsaw.w3
 
 All `.py` files were validated using the [CI Python Linter](https://pep8ci.herokuapp.com/).
 
-- ✅ All files passed.
-- ℹ️ Some long lines were kept intentionally for readability.
+- All files passed. See screenshots below.
+
 
 ---
 
@@ -131,9 +129,7 @@ All `.py` files were validated using the [CI Python Linter](https://pep8ci.herok
 
 ## Screenshots
 
-🖼️ Screenshots for all responsive breakpoints, features, and validation results are available in the `/static/images` folder and referenced in the [README.md](README.md).
-
-
+Screenshots for all responsive breakpoints, features, and validation results are available in the `/static/images` folder and referenced below or in the [README.md](README.md).
 
 ### Responsive Layout
 
@@ -195,16 +191,86 @@ All `.py` files were validated using the [CI Python Linter](https://pep8ci.herok
 
   ![logged-out](/static/images/logged-out.png)
 
+- Page Not Found
+
+  ![page not found](/static/images/page-not-found.png)
+
 ### Password section
 
 ## HTML Validation
 
+- Home Page
+
+![Home HTML Validation](/static/images/html-val-homepage.png)
+
+- About
+
+![About HTML Validation](/static/images/html-val-about.png)
+
+- Login
+
+![Login HTML Validation](/static/images/html-val-login.png)
+
+- Signup
+
+![Signup HTML Validation](/static/images/html-val-signup.png)
+
+- Booklist
+
+![Booklist HTML Validation](/static/images/html-val-booklist.png)
+
+- Add Book
+
+![Add Book HTML Validation](/static/images/html-val-add-book.png)
+
+- Edit Book
+
+![Edit Book HTML Validation](/static/images/html-val-edit.png)
+
+- Delete Book
+
+![Delete Book HTML Validation](/static/images/html-val-delete.png)
+
+- Logout
+
+![Logout HTML Validation](/static/images/html-val-logout.png)
+
+- Password Reset
+
+![Password Reset HTML Validation](/static/images/html-val-password-reset.png)
+
+- Password Reset Done
+
+![Password Reset Done HTML Validation](/static/images/html-val-password-reset-done.png)
+
 ## CSS Validation
+
+- CSS Validation results
+
+![CSS Validation Results](/static/images/css-val.png)
 
 ## Python Code Validation (PEP8)
 
-### Bug Fixes
+- Views
 
-- Before and after nav alignment fix:  
-  ![Broken nav](/static/images/nav-before-fix.png)  
-  ![Fixed nav](/static/images/nav-after-fix.png)
+![views PEP8 results](/static/images/pep8-views.py.png)
+
+- URLS
+
+![urls PEP8 results](/static/images/pep8-urls.py.png)
+
+- Models
+
+![models PEP8 results](/static/images/pep8-models.py.png)
+
+- Forms
+
+![forms PEP8 results](/static/images/pep8-forms.py.png)
+
+- Apps
+
+![apps PEP8 results](/static/images/pep8-apps.py.png)
+
+- Admin
+
+![admin PEP8 results](/static/images/pep8-admin.py.png)
