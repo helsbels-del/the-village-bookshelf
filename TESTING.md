@@ -15,6 +15,13 @@
 - [Python Code Validation (PEP8)](#python-code-validation-pep8)
 - [Bugs and Fixes](#bugs-and-fixes)
 - [Screenshots](#screenshots)
+  - [Responsive Layout](#responsive-layout)
+  - [Feature Testing](#feature-testing)
+  - [Password Section](#password-section)
+  - [HTML Validation](#html-validation-1)
+  - [CSS Validation](#css-validation-1)
+  - [Python Code Validation (PEP8)](#python-code-validation-pep8-1)
+
 
 ---
 
@@ -196,8 +203,6 @@ Screenshots for all responsive breakpoints, features, and validation results are
 - Page Not Found
 
   ![page not found](/static/images/page-not-found.png)
-
-### Password section
 
 ## HTML Validation
 
