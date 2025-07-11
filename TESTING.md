@@ -56,6 +56,8 @@ This file documents all manual testing and validation performed for **The Villag
 | Swap Request Again | Click on already requested book        | Message shown: “already requested”            | ✅ Passed            | 
 | Logout         | Click logout                               | Redirected to logged-out page                 | ✅ Passed            | 
 
+Note - Session Persistence:
+When users do not log out and revisit the site within a valid session period, they remain logged in and are directed to the appropriate view. This confirms that Django session cookies are working correctly.
 ---
 
 ## User Journey Testing
