@@ -39,23 +39,13 @@ This file documents all manual testing and validation performed for **The Villag
 |----------------|---------------------------------------------|-----------------------------------------------|----------------------|------------|
 | Sign Up Form   | Submit with valid inputs                    | User created, redirected to book list         | ✅ Passed            | ✅         |
 | Login          | Correct username/password                   | Redirected to book list                       | ✅ Passed            | ✅         |
-| Login          | Incorrect credentials                       | Error message shown                           | ✅ Passed            | ✅         |
- ![incorrect details](/static/images/incorrect-details-message.png)
+| Login          | Incorrect credentials                       | Error message shown                           | ✅ Passed            | ✅         | 
 | Add Book       | Valid input                                 | Book saved and appears in book list           | ✅ Passed            | ✅         |
-![book details saved](/static/images/book-details-saved.png)
 | Edit Book      | Change details and save                     | Book updated                                  | ✅ Passed            | ✅         |
-
 | Delete Book    | Confirm deletion                            | Book removed from database                    | ✅ Passed            | ✅         |
-![confirm deletion](/static/images/confirm-deletion.png)
-
 | Request Swap   | Click on a book you don’t own               | Email sent to owner, message displayed        | ✅ Passed            | ✅         |
-![confirm deletion](/static/images/swaprequest-success-message.png)
 | Swap Request Again | Click on already requested book        | Message shown: “already requested”            | ✅ Passed            | ✅         |
-![confimr deletion](/static/images/already-requested.png)
 | Logout         | Click logout                               | Redirected to logged-out page                 | ✅ Passed            | ✅         |
-![confimr deletion](/static/images/logout-message.png)
-![confimr deletion](/static/images/logged-out.png)
-
 
 ---
 
@@ -143,6 +133,8 @@ All `.py` files were validated using the [CI Python Linter](https://pep8ci.herok
 
 🖼️ Screenshots for all responsive breakpoints, features, and validation results are available in the `/static/images` folder and referenced in the [README.md](README.md).
 
+
+
 ### Responsive Layout
 
 - Mobile View (375px)
@@ -160,9 +152,56 @@ All `.py` files were validated using the [CI Python Linter](https://pep8ci.herok
 ### Feature Testing
 
 - Signup error:  
+
   ![Signup empty field error](/static/images/empty-field-message.png)
+
+- Add Book
+
+  ![add book success](/static/images/add-book-success.png)
+
+- Edit Book saved
+
+  ![book updates saved](/static/images/book-details-saved.png)
+
 - Swap request confirmation:  
+
   ![Swap request success](/static/images/swaprequest-success-message.png)
+
+- Incorrect details entered
+
+  ![incorrect details](/static/images/incorrect-details-message.png)
+
+- Confirm Book delete
+
+  ![confirm deletion](/static/images/confirm-deletion.png)
+
+- Book details saved
+
+  ![book details saved](/static/images/book-details-saved.png)
+
+- Bookswap Request
+
+  ![bookswap request](/static/images/swaprequest-success-message.png)
+
+- Already Requested
+
+  ![already-requested](/static/images/already-requested.png)
+
+- Logout Message
+
+  ![logout-message](/static/images/logout-message.png)
+
+- logged out
+
+  ![logged-out](/static/images/logged-out.png)
+
+### Password section
+
+## HTML Validation
+
+## CSS Validation
+
+## Python Code Validation (PEP8)
 
 ### Bug Fixes
 
